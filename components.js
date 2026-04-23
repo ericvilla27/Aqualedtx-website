@@ -79,19 +79,19 @@
             <div class="footer-col">
               <h4>Contact</h4>
               <div class="footer-contact-item">
-                <span class="ico">📞</span>
-                <a href="tel:+15126572152">(512) 555-0192</a>
+                <span class="ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+                <a href="tel:+15126572152">(512) 657-2152</a>
               </div>
               <div class="footer-contact-item">
-                <span class="ico">✉️</span>
+                <span class="ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
                 <a href="mailto:info@aqualedllc.com">info@aqualedllc.com</a>
               </div>
               <div class="footer-contact-item">
-                <span class="ico">📍</span>
+                <span class="ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
                 <span>Buda, TX — Serving Central Texas</span>
               </div>
               <div class="footer-contact-item">
-                <span class="ico">🕐</span>
+                <span class="ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
                 <span>Mon–Fri 7am–6pm · Sat 8am–2pm</span>
               </div>
             </div>
