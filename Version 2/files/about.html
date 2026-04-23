@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About AquaLED, LLC — Local Outdoor Contractor | Central Texas</title>
+  <meta name="description" content="AquaLED, LLC is a locally owned outdoor contractor serving all of Central Texas. 5 years of experience, Licensed Irrigator LI #22379, $2M general liability. Fast turnaround, direct communication, no upselling." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-story {
+      display:grid; grid-template-columns:1fr 1.2fr; gap:5rem; align-items:start;
+    }
+    .about-photo-stack { position:relative; }
+    .about-photo-main {
+      width:100%; aspect-ratio:3/4; border-radius:var(--radius);
+      background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 50%,var(--green) 100%);
+      display:flex; align-items:center; justify-content:center; flex-direction:column;
+      box-shadow:var(--shadow-lg);
+    }
+    .about-photo-main .photo-icon  { font-size:4rem; }
+    .about-photo-main .photo-label {
+      font-size:0.75rem; font-weight:700; letter-spacing:0.1em;
+      color:rgba(255,255,255,0.42); text-transform:uppercase; margin-top:0.75rem;
+    }
+    .about-badge {
+      position:absolute; bottom:-1.5rem; right:-1.5rem;
+      background:var(--gold); color:var(--navy);
+      padding:1.25rem 1.5rem; border-radius:var(--radius);
+      box-shadow:var(--shadow); text-align:center; min-width:145px;
+    }
+    .about-badge .badge-number { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; line-height:1; display:block; }
+    .about-badge .badge-label  { font-size:0.75rem; line-height:1.3; display:block; margin-top:0.3rem; font-weight:700; }
+
+    .about-text p { color:var(--gray); margin-bottom:1.1rem; line-height:1.8; font-size:1.02rem; }
+    .about-text p strong { color:var(--navy); font-weight:700; }
+
+    .about-values { margin-top:2rem; display:flex; flex-direction:column; gap:1rem; }
+    .about-value  { display:flex; gap:1rem; align-items:flex-start; }
+    .about-value-icon {
+      width:40px; height:40px; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25);
+      border-radius:8px; display:flex; align-items:center; justify-content:center;
+      font-size:1.1rem; flex-shrink:0;
+    }
+    .about-value-text h4 { font-size:0.95rem; margin-bottom:0.2rem; }
+    .about-value-text p  { font-size:0.88rem; margin-bottom:0; color:var(--gray); line-height:1.6; }
+
+    .license-box {
+      background:var(--navy); border-radius:var(--radius); padding:2.5rem;
+      display:flex; align-items:center; gap:2rem; margin-top:4rem; flex-wrap:wrap;
+    }
+    .license-icon { font-size:3rem; flex-shrink:0; }
+    .license-text h3 { color:var(--white); margin-bottom:0.6rem; }
+    .license-text p  { color:rgba(255,255,255,0.58); font-size:0.9rem; line-height:1.7; margin:0; }
+
+    .cred-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1.5rem; margin-top:2.5rem; }
+    .cred-card {
+      background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.2);
+      border-radius:var(--radius); padding:1.5rem; text-align:center;
+    }
+    .cred-card .cc-icon  { font-size:1.8rem; margin-bottom:0.5rem; }
+    .cred-card .cc-value { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; color:var(--gold); line-height:1.2; }
+    .cred-card .cc-label { font-size:0.8rem; color:rgba(255,255,255,0.5); margin-top:0.3rem; line-height:1.4; }
+
+    .commitment-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem; margin-top:3rem; }
+    .commitment-card {
+      background:var(--white); border-radius:var(--radius); padding:2rem 1.5rem;
+      text-align:center; box-shadow:var(--shadow); transition:transform var(--transition);
+    }
+    .commitment-card:hover { transform:translateY(-4px); }
+    .commitment-card .c-icon { font-size:2.2rem; margin-bottom:0.75rem; }
+    .commitment-card h3 { font-size:1rem; margin-bottom:0.5rem; }
+    .commitment-card p  { font-size:0.87rem; color:var(--gray); line-height:1.6; }
+
+    @media(max-width:800px){
+      .about-story { grid-template-columns:1fr; gap:3rem; }
+      .about-badge { right:0.5rem; bottom:-1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <script src="components.js"></script>
+
+  <div class="cred-bar">
+    <div class="container">
+      <div class="cred-items">
+        <div class="cred-item"><span class="cred-icon">🛡️</span> LI #22379</div>
+        <div class="cred-item"><span class="cred-icon">✅</span> $2M General Liability</div>
+        <div class="cred-item"><span class="cred-icon">⭐</span> 5 Years in Business</div>
+        <div class="cred-item"><span class="cred-icon">📍</span> All of Central Texas</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label" style="color:rgba(255,255,255,0.45);">Our Story</span>
+      <h1>About AquaLED, LLC</h1>
+      <p>A locally owned outdoor contractor built on speed, transparency, and doing the job right — without the upsell.</p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section>
+    <div class="container">
+      <div class="about-story">
+        <div class="about-photo-stack">
+          <div class="about-photo-main">
+            <div class="photo-icon">🌿</div>
+            <div class="photo-label">Add Team Photo Here</div>
+          </div>
+          <div class="about-badge">
+            <span class="badge-number">5+</span>
+            <span class="badge-label">Years Serving Central Texas</span>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <span class="section-label">Who We Are</span>
+          <h2>Small Business. Big Capabilities.</h2>
+
+          <p>AquaLED, LLC was built around a simple idea: Central Texas deserves an outdoor contractor that actually communicates, shows up prepared, and gets the job done without dragging it out or padding the quote.</p>
+
+          <p>We've spent five years building that reputation — one project at a time. From residential irrigation installs in Buda and Kyle to large-scale commercial excavation at Bowie High School and athletic field irrigation at schools and sports complexes across the region, our crew brings the same level of organization and craftsmanship to every job.</p>
+
+          <p><strong>When you hire AquaLED, you work directly with the person in charge.</strong> There's no middleman, no franchise overhead, and no incentive to upsell you on things you don't need. We listen to what you actually need and quote exactly that.</p>
+
+          <p>Most of our projects are completed in under a week. That's not a marketing claim — it's how we run our operation. An organized crew and clear scope means we start on time, work efficiently, and finish before most contractors are done scheduling.</p>
+
+          <div class="about-values">
+            <div class="about-value">
+              <div class="about-value-icon">💬</div>
+              <div class="about-value-text">
+                <h4>Direct Communication</h4>
+                <p>You speak to the person running your job — from the estimate call to the final walkthrough.</p>
+              </div>
+            </div>
+            <div class="about-value">
+              <div class="about-value-icon">⚡</div>
+              <div class="about-value-text">
+                <h4>Fast, Organized Crew</h4>
+                <p>Most jobs completed in under a week. We show up on time and work with a clear plan.</p>
+              </div>
+            </div>
+            <div class="about-value">
+              <div class="about-value-icon">🚫</div>
+              <div class="about-value-text">
+                <h4>Zero Upselling</h4>
+                <p>We quote what you need. Nothing more. No pressure, no inflated scope, no surprises.</p>
+              </div>
+            </div>
+            <div class="about-value">
+              <div class="about-value-icon">🏗️</div>
+              <div class="about-value-text">
+                <h4>Commercial-Grade Experience</h4>
+                <p>We've handled school campuses, sports complexes, and large commercial sites — not just backyards.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- License Box -->
+      <div class="license-box">
+        <div class="license-icon">🛡️</div>
+        <div class="license-text">
+          <h3>Licensed, Insured, and Operating by the Book</h3>
+          <p>AquaLED, LLC holds a Texas Licensed Irrigator certification (LI #22379) and carries $2 million in general liability insurance on every project. We call 811 before every dig, pull permits when required, and don't cut corners that could create problems for you down the road. Your property is protected — and so is our reputation.</p>
+          <div class="cred-cards">
+            <div class="cred-card">
+              <div class="cc-icon">📋</div>
+              <div class="cc-value">LI #22379</div>
+              <div class="cc-label">Licensed Irrigator — State of Texas</div>
+            </div>
+            <div class="cred-card">
+              <div class="cc-icon">🛡️</div>
+              <div class="cc-value">$2M</div>
+              <div class="cc-label">General Liability Insurance</div>
+            </div>
+            <div class="cred-card">
+              <div class="cc-icon">⭐</div>
+              <div class="cc-value">5+</div>
+              <div class="cc-label">Years in Business</div>
+            </div>
+            <div class="cred-card">
+              <div class="cc-icon">⚡</div>
+              <div class="cc-value">&lt;7</div>
+              <div class="cc-label">Days to Complete Most Jobs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMITMENTS -->
+  <section class="bg-offwhite">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What We Stand Behind</span>
+        <h2>Our Commitments on Every Job</h2>
+        <div class="divider"></div>
+        <p>These aren't marketing promises — they're the standard we hold ourselves to regardless of project size.</p>
+      </div>
+      <div class="commitment-grid">
+        <div class="commitment-card">
+          <div class="c-icon">📋</div>
+          <h3>Clear, Detailed Estimates</h3>
+          <p>You know exactly what we're doing, what it costs, and why — before any work begins.</p>
+        </div>
+        <div class="commitment-card">
+          <div class="c-icon">🔧</div>
+          <h3>Quality Materials</h3>
+          <p>Name-brand irrigation heads, commercial-grade fixtures, and durable concrete — not cheap substitutes.</p>
+        </div>
+        <div class="commitment-card">
+          <div class="c-icon">🧹</div>
+          <h3>Clean Jobsite</h3>
+          <p>We haul our debris, fill our trenches, and restore any disturbed areas before we leave.</p>
+        </div>
+        <div class="commitment-card">
+          <div class="c-icon">🚶</div>
+          <h3>Completion Walkthrough</h3>
+          <p>Every job ends with a walkthrough so you understand how to use and maintain your new system.</p>
+        </div>
+        <div class="commitment-card">
+          <div class="c-icon">📱</div>
+          <h3>Post-Install Support</h3>
+          <p>Questions after the job? Text us. We stand behind our work and we'll make it right if something's off.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section class="area-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Where We Work</span>
+        <h2>All of Central Texas</h2>
+        <div class="divider"></div>
+        <p>We serve homeowners, builders, school districts, and commercial clients across the entire Central Texas region.</p>
+      </div>
+      <div class="area-tags" style="justify-content:center;">
+        <span class="area-tag">Buda, TX</span>
+        <span class="area-tag">Kyle, TX</span>
+        <span class="area-tag">Austin, TX</span>
+        <span class="area-tag">San Marcos, TX</span>
+        <span class="area-tag">Lockhart, TX</span>
+        <span class="area-tag">Dripping Springs, TX</span>
+        <span class="area-tag">Wimberley, TX</span>
+        <span class="area-tag">Pflugerville, TX</span>
+        <span class="area-tag">Cedar Park, TX</span>
+        <span class="area-tag">Round Rock, TX</span>
+        <span class="area-tag">Hays County</span>
+        <span class="area-tag">Travis County</span>
+        <span class="area-tag">Caldwell County</span>
+        <span class="area-tag">All of Central Texas</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready to Work With a Contractor You Can Actually Reach?</h2>
+      <p>Text or email us — we respond fast, Monday through Saturday.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-gold">Request Free Estimate</a>
+        <a href="sms:+15126572152" class="btn btn-outline">💬 Text (512) 657-2152</a>
+        <a href="mailto:info@aqualedllc.com" class="btn btn-outline">✉️ info@aqualedllc.com</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+</body>
+</html>

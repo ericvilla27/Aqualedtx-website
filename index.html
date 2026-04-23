@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AquaLED, LLC — Irrigation, Landscape Lighting & Drainage | Central Texas</title>
+  <meta name="description" content="AquaLED, LLC is Central Texas' trusted outdoor contractor specializing in irrigation installation and repair, landscape lighting, drainage, and underground utilities. Serving Buda, Kyle, Austin, San Marcos, and surrounding areas." />
+  <meta name="keywords" content="irrigation installation Central Texas, irrigation repair Buda TX, landscape lighting Austin, drainage contractor Kyle TX, underground utilities San Marcos" />
+  <link rel="canonical" href="https://www.aqualedtx.com/" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Homepage-specific styles -->
+  <style>
+    /* ── HERO ───────────────────────────────────────── */
+    .home-hero {
+      min-height: 92vh;
+      background:
+        linear-gradient(to bottom, rgba(10,15,12,0.6) 0%, rgba(10,15,12,0.4) 50%, rgba(10,15,12,0.85) 100%),
+        url('assets/photos/F9F46C57-C317-47E6-A26F-493493701300.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(46,139,87,0.2);
+      border: 1px solid rgba(46,139,87,0.5);
+      color: #6be0a0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+
+    .home-hero h1 {
+      color: var(--white);
+      font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    .home-hero h1 em {
+      font-style: normal;
+      color: var(--green);
+    }
+
+    .hero-sub {
+      color: rgba(255,255,255,0.8);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      max-width: 580px;
+      margin-bottom: 2rem;
+      line-height: 1.65;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-ctas .btn-primary { font-size: 1rem; padding: 0.95rem 2rem; }
+    .hero-ctas .btn-outline  { font-size: 1rem; padding: 0.95rem 2rem; }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.45);
+      font-size: 0.75rem;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .hero-scroll::after {
+      content: '↓';
+      display: block;
+      margin-top: 0.3rem;
+      font-size: 1rem;
+      animation: bounce 1.8s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* ── WHY CHOOSE ─────────────────────────────────── */
+    .why-section { background: var(--white); }
+
+    .why-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .why-text p {
+      color: var(--gray);
+      margin-top: 1rem;
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+
+    .why-quote {
+      background: var(--offwhite);
+      border-left: 4px solid var(--green);
+      padding: 2rem 2rem 2rem 1.75rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .why-quote blockquote {
+      font-size: 1.1rem;
+      color: var(--navy);
+      font-style: italic;
+      line-height: 1.65;
+    }
+
+    .why-quote cite {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--gray);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+      .why-intro { grid-template-columns: 1fr; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav injected by components.js -->
+  <script src="components.js"></script>
+
+  <!-- ══════════════════════════════════════════════
+       HERO SECTION
+  ══════════════════════════════════════════════ -->
+  <section class="home-hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">Now Accepting New Projects — Central Texas</div>
+        <h1>Built Fast.<br><em>Built Right.</em></h1>
+        <p class="hero-sub">
+          AquaLED, LLC delivers irrigation, landscape lighting, hardscape, and concrete across Central Texas — on time, on budget, with direct communication from the crew that does the work.
+        </p>
+        <div class="hero-ctas">
+          <a href="tel:+15126572152" class="btn btn-primary">Call (512) 657-2152</a>
+          <a href="contact.html" class="btn btn-outline">Request Free Estimate →</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">Scroll to explore</div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       TRUST BAR
+  ══════════════════════════════════════════════ -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-items">
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <h4>Licensed &amp; Insured</h4>
+            <p>LI #22379 · $2M General Liability. You're covered on every job.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <h4>Direct Communication</h4>
+            <p>You speak to the person running the job — no middlemen, no runaround.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>Fast Turnaround</h4>
+            <p>Most projects completed in under a week. Organized crew, no delays.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <h4>Residential &amp; Commercial</h4>
+            <p>From backyard installs to school district contracts — we've done both.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       SERVICES PREVIEW
+  ══════════════════════════════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What We Do</span>
+        <h2>Full-Service Outdoor Contractor</h2>
+        <p>We handle everything from the trenching underground to the lighting that makes your property shine at night — all from one crew you can trust.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Irrigation -->
+        <div class="service-card">
+          <div class="service-card-body">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+            </div>
+            <h3>Irrigation Installation &amp; Repair</h3>
+            <p>Custom-designed systems engineered for your property's zones, soil type, and water budget. New installs, smart controllers, and fast repairs.</p>
+            <a href="services.html#irrigation" class="card-link">Learn More →</a>
+          </div>
+        </div>
+
+        <!-- Lighting -->
+        <div class="service-card">
+          <div class="service-card-body">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            </div>
+            <h3>Landscape Lighting</h3>
+            <p>LED systems that transform your property after dark — uplights, path lights, deck accents, and color-changing zones up to 45+ fixtures.</p>
+            <a href="services.html#lighting" class="card-link">Learn More →</a>
+          </div>
+        </div>
+
+        <!-- Hardscape -->
+        <div class="service-card">
+          <div class="service-card-body">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+            </div>
+            <h3>Hardscape</h3>
+            <p>Patios, walkways, retaining walls, and outdoor living areas built to complement your landscape and hold up against Central Texas conditions.</p>
+            <a href="services.html#hardscape" class="card-link">Learn More →</a>
+          </div>
+        </div>
+
+        <!-- Concrete -->
+        <div class="service-card">
+          <div class="service-card-body">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <h3>Concrete &amp; Flatwork</h3>
+            <p>Driveways, slabs, sidewalks, and foundations — from small residential pads to full commercial foundations. Clean work, fast turnaround.</p>
+            <a href="services.html#concrete" class="card-link">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       REAL PROJECTS / RESULTS
+  ══════════════════════════════════════════════ -->
+  <section class="bg-offwhite">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Real Work. Real Results.</span>
+        <h2>Recent Projects in Central Texas</h2>
+        <p>We don't just talk about quality — we show it. Every project below was completed by our crew, on schedule, and built to last.</p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-img">
+            <img src="assets/photos/image000002.jpg" alt="Bowie High School excavation — commercial chiller lines" loading="lazy">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">Excavation</span>
+            <h3>Bowie High School — Austin, TX</h3>
+            <p>Excavated 1,500+ linear feet for new chiller and return lines on an active school campus. Completed on schedule without disrupting school operations.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">
+            <img src="assets/photos/F9F46C57-C317-47E6-A26F-493493701300.jpg" alt="45-fixture color landscape lighting installation" loading="lazy">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">Landscape Lighting</span>
+            <h3>45-Fixture Color Lighting — Central Texas</h3>
+            <p>Full dim-and-color LED landscape system with uplights on trees, perimeter wash, and driveway path lighting. Controlled by a single app.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">
+            <img src="assets/photos/IMG_20231011_133538_01.jpg" alt="Residential concrete paver patio around oak tree" loading="lazy">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">Concrete</span>
+            <h3>Concrete Paver Patio — Central Texas</h3>
+            <p>Custom concrete paver patio built around a mature oak tree. Clean forms, smooth finish, and built to handle Texas heat and ground movement.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">
+            <img src="assets/photos/7486577268095447263.jpg" alt="Commercial irrigation pump and manifold installation" loading="lazy">
+          </div>
+          <div class="project-body">
+            <span class="project-tag">Commercial Irrigation</span>
+            <h3>Dripping Springs Sports Complex</h3>
+            <p>Two complete irrigation systems installed for softball fields. Designed for full-field coverage, independent zone control, and long-term durability.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-2">
+        <a href="gallery.html" class="btn btn-dark">View All Projects →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       WHY CHOOSE US
+  ══════════════════════════════════════════════ -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-intro">
+        <div class="why-text">
+          <span class="section-label">Why AquaLED</span>
+          <h2>We Treat Your Property Like It's Our Own</h2>
+          <p>There's no shortage of contractors in Central Texas — but there's a shortage of ones who actually call you back, show up on time, and do the job right the first time. That's what we built AquaLED to be.</p>
+          <p>We're a small, focused crew. That means every project gets our full attention, not the leftovers from a dozen jobs running at the same time. When you hire AquaLED, you work directly with the people doing the work.</p>
+          <div style="margin-top:1.5rem;">
+            <a href="about.html" class="btn btn-primary">Learn About Us →</a>
+          </div>
+        </div>
+        <div class="why-quote">
+          <blockquote>
+            "We're not trying to be the biggest outdoor contractor in Texas — we're focused on being the most reliable one in your neighborhood. Every customer deserves consistent communication, clean work, and a crew that respects their property."
+          </blockquote>
+          <cite>— AquaLED, LLC Ownership Team · Buda, TX</cite>
+        </div>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-number">100%</div>
+          <h3>Jobs Done Right</h3>
+          <p>We don't cut corners. Every install is built to last and to code.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-number">24h</div>
+          <h3>Response Time</h3>
+          <p>Most estimate requests are returned within one business day.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-number">Res + Com</div>
+          <h3>Both Markets</h3>
+          <p>From single-family homes to commercial sites — we've done both.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-number">Local</div>
+          <h3>Central Texas Based</h3>
+          <p>We live and work here. Your satisfaction is our reputation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SERVICE AREA
+  ══════════════════════════════════════════════ -->
+  <section class="area-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Service Area</span>
+        <h2>Proudly Serving Central Texas</h2>
+        <p>Based in Buda, we serve homeowners and businesses across the greater Austin metro and surrounding communities.</p>
+      </div>
+
+      <div class="area-tags" style="justify-content:center;">
+        <span class="area-tag">Buda, TX</span>
+        <span class="area-tag">Kyle, TX</span>
+        <span class="area-tag">Austin, TX</span>
+        <span class="area-tag">San Marcos, TX</span>
+        <span class="area-tag">Lockhart, TX</span>
+        <span class="area-tag">Wimberley, TX</span>
+        <span class="area-tag">Pflugerville, TX</span>
+        <span class="area-tag">Cedar Park, TX</span>
+        <span class="area-tag">Round Rock, TX</span>
+        <span class="area-tag">Hays County</span>
+        <span class="area-tag">Travis County</span>
+        <span class="area-tag">Caldwell County</span>
+      </div>
+
+      <p style="text-align:center;margin-top:1.5rem;color:var(--gray);font-size:0.9rem;">
+        Not sure if we cover your area? <a href="contact.html" style="color:var(--green);font-weight:700;">Give us a call — we'll let you know.</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       CTA BANNER
+  ══════════════════════════════════════════════ -->
+  <section class="cta-banner">
+    <div class="container">
+      <span class="section-label" style="color:rgba(255,255,255,0.55);">Get Started Today</span>
+      <h2>Ready to Get Your Outdoor Project Done?</h2>
+      <p>No pressure, no obligation. Just a straight-talking estimate from a contractor who knows Central Texas.</p>
+      <a href="tel:+15126572152" class="cta-phone">(512) 657-2152</a>
+      <div class="cta-buttons">
+        <a href="tel:+15126572152" class="btn btn-primary">Call Now</a>
+        <a href="contact.html" class="btn btn-outline">Request Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+</body>
+</html>

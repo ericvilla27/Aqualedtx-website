@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Irrigation, Lighting, Drainage | AquaLED, LLC Central Texas</title>
+  <meta name="description" content="AquaLED, LLC offers irrigation installation and repair, LED landscape lighting, drainage solutions, and underground utility trenching across Buda, Kyle, Austin, and San Marcos, TX." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── Service Detail Sections ── */
+    .service-detail {
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+    }
+    .service-detail:nth-child(even) { background: var(--offwhite); }
+
+    .service-detail-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .service-detail:nth-child(even) .service-detail-inner {
+      direction: rtl;
+    }
+    .service-detail:nth-child(even) .service-detail-inner > * {
+      direction: ltr;
+    }
+
+    .service-visual {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-family: 'Montserrat', sans-serif;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .service-visual.v-irrigation {
+      background: linear-gradient(135deg, #1a3f63 0%, #2E8B57 100%);
+    }
+    .service-visual.v-lighting {
+      background: linear-gradient(135deg, #0d2137 0%, #b8860b 100%);
+    }
+    .service-visual.v-drainage {
+      background: linear-gradient(135deg, #1a3f63 0%, #4a8fa5 100%);
+    }
+    .service-visual.v-trenching {
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    }
+    .visual-icon { font-size: 3.5rem; }
+
+    .service-text h2 {
+      margin-bottom: 1rem;
+    }
+
+    .service-text p {
+      color: var(--gray);
+      margin-bottom: 1rem;
+      line-height: 1.75;
+    }
+
+    .service-benefits {
+      margin: 1.5rem 0 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .benefit-item::before {
+      content: '✓';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background: rgba(46,139,87,0.12);
+      color: var(--green);
+      border-radius: 50%;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    @media (max-width: 800px) {
+      .service-detail-inner { grid-template-columns: 1fr; }
+      .service-detail:nth-child(even) .service-detail-inner { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+  <script src="components.js"></script>
+
+  <!-- ── PAGE HERO ───────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label" style="color:rgba(255,255,255,0.55);">What We Offer</span>
+      <h1>Our Services</h1>
+      <p>Everything your property needs — installed right, built to last, backed by a local team that answers the phone.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       IRRIGATION
+  ══════════════════════════════════════════════ -->
+  <section class="service-detail" id="irrigation">
+    <div class="container">
+      <div class="service-detail-inner">
+        <div class="service-visual v-irrigation">
+          <div class="visual-icon">💧</div>
+          <span>Irrigation Install · Buda, TX</span>
+        </div>
+        <div class="service-text">
+          <span class="section-label">Service 01</span>
+          <h2>Irrigation Installation &amp; Repair</h2>
+          <p>
+            A well-designed irrigation system does more than water your yard — it protects your landscaping investment, lowers your water bill, and removes the guesswork entirely. We design every system from scratch based on your yard's zones, soil, sun exposure, and plant types.
+          </p>
+          <p>
+            Already have a system that's underperforming? We diagnose and repair existing irrigation — broken heads, damaged lines, controller issues, and inefficient zone layouts. Most repairs are completed same-day.
+          </p>
+          <div class="service-benefits">
+            <div class="benefit-item">Custom zone layout for maximum efficiency</div>
+            <div class="benefit-item">Smart Wi-Fi controller installation available</div>
+            <div class="benefit-item">Rain sensor and seasonal programming included</div>
+            <div class="benefit-item">New construction and retrofit installs</div>
+            <div class="benefit-item">Same-day repair for most issues</div>
+            <div class="benefit-item">Winterization and spring startup service</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary">Get an Irrigation Estimate →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       LANDSCAPE LIGHTING
+  ══════════════════════════════════════════════ -->
+  <section class="service-detail" id="lighting">
+    <div class="container">
+      <div class="service-detail-inner">
+        <div class="service-visual v-lighting">
+          <div class="visual-icon">💡</div>
+          <span>Landscape Lighting · Austin, TX</span>
+        </div>
+        <div class="service-text">
+          <span class="section-label">Service 02</span>
+          <h2>LED Landscape Lighting</h2>
+          <p>
+            Landscape lighting done well transforms a property after dark — it adds security, curb appeal, and ambiance that you'll notice every time you pull into your driveway. We design and install fully low-voltage LED systems built to last in the Texas heat.
+          </p>
+          <p>
+            From uplighting trees and architectural features to path lights and deck accents, we'll help you choose a design that fits your home's style and your budget — then install it cleanly with all wire buried and fixtures properly anchored.
+          </p>
+          <div class="service-benefits">
+            <div class="benefit-item">Low-voltage LED systems — energy efficient</div>
+            <div class="benefit-item">Uplighting, path lighting, accent &amp; deck lighting</div>
+            <div class="benefit-item">All wiring buried and weatherproofed</div>
+            <div class="benefit-item">Timer and smart control options available</div>
+            <div class="benefit-item">Dramatically improves curb appeal and safety</div>
+            <div class="benefit-item">Residential and commercial installations</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary">Get a Lighting Estimate →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       DRAINAGE
+  ══════════════════════════════════════════════ -->
+  <section class="service-detail" id="drainage">
+    <div class="container">
+      <div class="service-detail-inner">
+        <div class="service-visual v-drainage">
+          <div class="visual-icon">🌊</div>
+          <span>Drainage Solution · Kyle, TX</span>
+        </div>
+        <div class="service-text">
+          <span class="section-label">Service 03</span>
+          <h2>Drainage Solutions</h2>
+          <p>
+            Standing water is one of the most damaging things for a home or commercial property. Poor drainage leads to foundation damage, erosion, dead grass, and flooded areas that make your yard unusable. We solve drainage problems for good — not just temporarily.
+          </p>
+          <p>
+            Every drainage project starts with a site assessment to understand where water is coming from and where it needs to go. We then design a system that moves water efficiently — away from your foundation and off your property.
+          </p>
+          <div class="service-benefits">
+            <div class="benefit-item">French drain design and installation</div>
+            <div class="benefit-item">Channel drain and surface drainage systems</div>
+            <div class="benefit-item">Downspout management and discharge lines</div>
+            <div class="benefit-item">Grading and landscape re-shaping</div>
+            <div class="benefit-item">Foundation protection drainage</div>
+            <div class="benefit-item">Residential and commercial drainage plans</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary">Get a Drainage Estimate →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       TRENCHING & UTILITIES
+  ══════════════════════════════════════════════ -->
+  <section class="service-detail" id="trenching">
+    <div class="container">
+      <div class="service-detail-inner">
+        <div class="service-visual v-trenching">
+          <div class="visual-icon">⛏️</div>
+          <span>Trenching &amp; Underground Utility</span>
+        </div>
+        <div class="service-text">
+          <span class="section-label">Service 04</span>
+          <h2>Trenching &amp; Underground Utilities</h2>
+          <p>
+            Whether you need conduit run for an outdoor structure, irrigation mainline trenched across a large property, or underground wiring routed for landscape lighting — we do it with precision and minimal disruption to your landscaping.
+          </p>
+          <p>
+            We work on both residential properties and commercial sites. Our equipment is appropriately sized for each job, so we're not bringing a full excavator for a simple line run or under-equipped for a large commercial trench.
+          </p>
+          <div class="service-benefits">
+            <div class="benefit-item">Irrigation supply and lateral line trenching</div>
+            <div class="benefit-item">Conduit runs for electrical and low-voltage</div>
+            <div class="benefit-item">Underground lighting wire installation</div>
+            <div class="benefit-item">Minimal lawn damage, clean restoration</div>
+            <div class="benefit-item">Residential lots and commercial acreage</div>
+            <div class="benefit-item">Texas 811 dig-safe compliance on all jobs</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary">Get a Trenching Estimate →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BANNER ──────────────────────────────────────── -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Not Sure Which Service You Need?</h2>
+      <p>Give us a call and describe what you're dealing with — we'll point you in the right direction, no pressure.</p>
+      <a href="tel:+15125550192" class="cta-phone">(512) 555-0192</a>
+      <div class="cta-buttons">
+        <a href="tel:+15125550192" class="btn btn-primary">📞 Call Now</a>
+        <a href="contact.html" class="btn btn-outline">Send Us a Message</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+</body>
+</html>

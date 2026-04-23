@@ -1,0 +1,21 @@
+# Large media — serve these from a CDN or local, not git
+*.mov
+*.MOV
+*.mp4
+*.MP4
+*.m4v
+*.MTS
+
+# HEIC files can't be used on web directly — convert to JPG/WebP first
+*.HEIC
+*.heic
+
+# Tool internals
+.claude/
+.gstack/
+memory/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini

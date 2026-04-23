@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Irrigation, Lighting, Excavation & Concrete | AquaLED, LLC Central Texas</title>
+  <meta name="description" content="AquaLED, LLC offers commercial and residential irrigation, LED landscape lighting, hardscape, excavation, concrete flatwork, and landscape services across all of Central Texas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .service-detail { padding: 88px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .service-detail:nth-child(even) { background: var(--offwhite); }
+
+    .service-detail-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center;
+    }
+    .service-detail:nth-child(even) .service-detail-inner { direction: rtl; }
+    .service-detail:nth-child(even) .service-detail-inner > * { direction: ltr; }
+
+    .service-visual {
+      border-radius: var(--radius); box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 0.75rem;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.42);
+    }
+    .v-irrigation { background: linear-gradient(135deg, #152844 0%, #1E7A4A 100%); }
+    .v-lighting   { background: linear-gradient(135deg, #0A1628 0%, #C9A84C 100%); }
+    .v-hardscape  { background: linear-gradient(135deg, #152844 0%, #7a6040 100%); }
+    .v-excavation { background: linear-gradient(135deg, #1A2535 0%, #2c3e50 100%); }
+    .v-concrete   { background: linear-gradient(135deg, #2d3436 0%, #636e72 100%); }
+    .v-landscape  { background: linear-gradient(135deg, #152844 0%, #1E7A4A 100%); }
+    .visual-icon  { font-size: 3.5rem; }
+
+    .service-text h2 { margin-bottom: 1rem; }
+    .service-text p  { color: var(--gray); margin-bottom: 1rem; line-height: 1.8; }
+    .service-text p strong { color: var(--navy); }
+
+    .service-benefits { margin: 1.5rem 0 2rem; display: flex; flex-direction: column; gap: 0.7rem; }
+    .benefit-item {
+      display: flex; align-items: flex-start; gap: 0.7rem;
+      font-size: 0.95rem; color: var(--text);
+    }
+    .benefit-item::before {
+      content: '✓';
+      display: flex; align-items: center; justify-content: center;
+      width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px;
+      background: rgba(30,122,74,0.1); color: var(--green);
+      border-radius: 50%; font-size: 0.75rem; font-weight: 700;
+    }
+
+    .project-callout {
+      background: var(--navy); border-radius: var(--radius);
+      padding: 1.25rem 1.5rem; display: flex; gap: 0.75rem;
+      align-items: flex-start; margin-top: 1.25rem;
+    }
+    .project-callout-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .project-callout p { color: rgba(255,255,255,0.62); font-size: 0.88rem; line-height: 1.6; margin: 0; }
+    .project-callout strong { color: var(--gold); }
+
+    @media (max-width: 800px) {
+      .service-detail-inner { grid-template-columns: 1fr; }
+      .service-detail:nth-child(even) .service-detail-inner { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+  <script src="components.js"></script>
+
+  <div class="cred-bar">
+    <div class="container">
+      <div class="cred-items">
+        <div class="cred-item"><span class="cred-icon">🛡️</span> LI #22379</div>
+        <div class="cred-item"><span class="cred-icon">✅</span> $2M General Liability</div>
+        <div class="cred-item"><span class="cred-icon">⚡</span> Most Jobs Under a Week</div>
+        <div class="cred-item"><span class="cred-icon">🏗️</span> Commercial &amp; Residential</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label" style="color:rgba(255,255,255,0.45);">What We Offer</span>
+      <h1>Our Services</h1>
+      <p>Six capabilities, one crew, zero subcontractors. Direct communication from estimate to completion.</p>
+    </div>
+  </section>
+
+  <!-- IRRIGATION -->
+  <section class="service-detail" id="irrigation">
+    <div class="container">
+      <div class="service-detail-inner">
+        <div class="service-visual v-irrigation">
+          <div class="visual-icon">💧</div>
+          <span>Replace with project photo</span>
+        </div>
+        <div class="service-text">
+          <span class="section-label">Service 01</span>
+          <h2>Irrigation</h2>
+          <p>From backyard residential systems to large-scale commercial athletic field installs — we design and build irrigation systems that work. No guesswork, no wasted water, no oversized quotes.</p>
+          <p><strong>Commercial experience:</strong> School athletic fields, sports complexes, and multi-acre commercial properties throughout Central Texas.</p>
+          <div class="service-benefits">
+            <div class="benefit-item">New residential and commercial system design + install</div>
+            <div class="benefit-item">Athletic fields, sports complexes, school campuses</div>
+            <div class="benefit-item">Repairs and system upgrades on existing systems</div>
+            <div class="benefit-item">Smart controller and rain sensor installation</div>
+            <div class="benefit-item">Drip systems for beds, trees, and gardens</div>
+            <div class="benefit-item">Licensed Irrigator on every job — LI #22379</div>
+          </div>
+          <div class="project-callout">
+            <div class="project-callout-icon">📋</div>
+            <p><strong>Past projects:</strong> Martin Middle School athletic fields, Dripping Springs Sports Complex softball fields (2 systems), and multiple large residential installs across Central Texas.</p>
+          </div>
+          <div style="margin-top:1.5rem;">
+            <a href="contact.html" class="btn btn-primary">Get an Irrigation Estimate →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANDSCAPE LIGHTING -->
+  <section class="service-detail" id="lighting">
+    <div class="container">
+      <div class="service-detail-inner">
+        <div class="service-visual v-lighting">
+          <div class="visual-icon">💡</div>
+          <span>Replace with project photo</span>
+        </div>
+        <div class="service-text">
+          <span class="section-label">Service 02</span>
+          <h2>Landscape Lighting</h2>
+          <p>A well-designed lighting system transforms a property after dark — improving security, curb appeal, and ambiance every time you pull into your driveway.</p>
+          <p>We've installed systems as large as <strong>45 fixtures with full dim and color control</strong> — all wiring buried, fixtures anchored, and controls programmed before we leave the jobsite.</p>
+          <div class="service-benefits">
+            <div class="benefit-item">Low-voltage LED — energy efficient and long-lasting</div>
+            <div class="benefit-item">Uplighting, path lights, deck and accent lighting</div>
+            <div class="benefit-item">Dim and color-temperature control systems</div>
+            <div class="benefit-item">All wiring buried and weatherproofed</div>
+            <div class="benefit-item">Smart timer and app-control options</div>
+            <div class="benefit-item">Residential and commercial installations</div>
+          </div>
+          <div style="margin-top:1.5rem;">
+            <a href="contact.html" class="btn btn-primary">Get a Lighting Estimate →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HARDSCAPE -->
+  <section class="service-detail" id="hardscape">
+    <div class="container">
+      <div class="service-detail-inner">
+        <div class="service-visual v-hardscape">
+          <div class="visual-icon">🪨</div>
+          <span>Replace with project photo</span>
+        </div>
+        <div class="service-text">
+          <span class="section-label">Service 03</span>
+          <h2>Hardscape</h2>
+          <p>Patios, walkways, retaining walls, steps, and outdoor structures built to last in Central Texas conditions. We design hardscape that works with your landscape — drainage considered, materials selected for the climate.</p>
+          <p>Good hardscape is functional first, beautiful second. We make sure every project adds real, lasting value to your property.</p>
+          <div class="service-benefits">
+            <div class="benefit-item">Patio and outdoor living area construction</div>
+            <div class="benefit-item">Walkways, steps, and pathways</div>
+            <div class="benefit-item">Retaining walls and grade changes</div>
+            <div class="benefit-item">Natural stone, pavers, and decorative concrete</div>
+            <div class="benefit-item">Drainage-conscious design on every project</div>
+            <div class="benefit-item">Residential and commercial applications</div>
+          </div>
+          <div style="margin-top:1.5rem;">
+            <a href="contact.html" class="btn btn-primary">Get a Hardscape Estimate →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXCAVATION -->
+  <section class="service-detail" id="excavation">
+    <div class="container">
+      <div class="service-detail-inner">
+        <div class="service-visual v-excavation">
+          <div class="visual-icon">🏗️</div>
+          <span>Replace with project photo</span>
+        </div>
+        <div class="service-text">
+          <span class="section-label">Service 04</span>
+          <h2>Excavation</h2>
+          <p>Precision excavation for underground utilities, mechanical lines, irrigation infrastructure, drainage systems, and site preparation. We've handled everything from residential trenching to large-scale commercial excavation.</p>
+          <p><strong>Proven track record:</strong> Our crew completed approximately 1,500 linear feet of excavation for new chiller and return lines at Bowie High School — on time and on budget.</p>
+          <div class="service-benefits">
+            <div class="benefit-item">Underground utility and mechanical line excavation</div>
+            <div class="benefit-item">Chiller line and HVAC infrastructure trenching</div>
+            <div class="benefit-item">Irrigation mainline and lateral installation</div>
+            <div class="benefit-item">Drainage system excavation</div>
+            <div class="benefit-item">Site prep for construction and landscaping</div>
+            <div class="benefit-item">Texas 811 dig-safe compliance on every job</div>
+          </div>
+          <div class="project-callout">
+            <div class="project-callout-icon">🏫</div>
+            <p><strong>Featured project:</strong> Bowie High School — approx. 1,500 LF of excavation for new chiller and return lines. Large commercial site, completed on schedule.</p>
+          </div>
+          <div style="margin-top:1.5rem;">
+            <a href="contact.html" class="btn btn-primary">Get an Excavation Estimate →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCRETE -->
+  <section class="service-detail" id="concrete">
+    <div class="container">
+      <div class="service-detail-inner">
+        <div class="service-visual v-concrete">
+          <div class="visual-icon">🧱</div>
+          <span>Replace with project photo</span>
+        </div>
+        <div class="service-text">
+          <span class="section-label">Service 05</span>
+          <h2>Concrete Work</h2>
+          <p>Flatwork, driveways, sidewalks, parking pads, building pads, and foundations. We do concrete the right way — proper base prep, control joints, correct slopes, and a finish that holds up through Texas heat and freeze cycles.</p>
+          <p>From a simple equipment pad to a full foundation pour, we deliver concrete that doesn't crack, settle, or look sloppy a few years down the road.</p>
+          <div class="service-benefits">
+            <div class="benefit-item">Driveways and parking areas</div>
+            <div class="benefit-item">Sidewalks, paths, and general flatwork</div>
+            <div class="benefit-item">Equipment pads and building pads</div>
+            <div class="benefit-item">Foundations and slabs</div>
+            <div class="benefit-item">Proper base prep and control joints on every pour</div>
+            <div class="benefit-item">Residential and commercial concrete work</div>
+          </div>
+          <div style="margin-top:1.5rem;">
+            <a href="contact.html" class="btn btn-primary">Get a Concrete Estimate →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANDSCAPE -->
+  <section class="service-detail" id="landscape">
+    <div class="container">
+      <div class="service-detail-inner">
+        <div class="service-visual v-landscape">
+          <div class="visual-icon">🌿</div>
+          <span>Replace with project photo</span>
+        </div>
+        <div class="service-text">
+          <span class="section-label">Service 06</span>
+          <h2>Landscape</h2>
+          <p>Full landscape installation and enhancement — plant bed design, sod, mulch, edging, and outdoor aesthetics that add real value to residential and commercial properties.</p>
+          <p>We treat landscaping as the finishing layer on everything we do. When we build an irrigation system, install hardscape, or pour concrete, the surrounding landscape leaves looking intentional and clean.</p>
+          <div class="service-benefits">
+            <div class="benefit-item">Plant bed design and installation</div>
+            <div class="benefit-item">Sod installation and lawn establishment</div>
+            <div class="benefit-item">Mulch, rock, and ground cover</div>
+            <div class="benefit-item">Edging and bed definition</div>
+            <div class="benefit-item">Seasonal color and perennial plantings</div>
+            <div class="benefit-item">Residential and commercial properties</div>
+          </div>
+          <div style="margin-top:1.5rem;">
+            <a href="contact.html" class="btn btn-primary">Get a Landscape Estimate →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Not Sure Which Service Fits Your Project?</h2>
+      <p>Text or email us a quick description — we'll point you in the right direction, no pressure.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-gold">Request Free Estimate</a>
+        <a href="sms:+15126572152" class="btn btn-outline">💬 Text (512) 657-2152</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+</body>
+</html>

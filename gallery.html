@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Gallery — AquaLED, LLC | Irrigation &amp; Landscape Lighting Central Texas</title>
+  <meta name="description" content="View completed irrigation, landscape lighting, drainage, and trenching projects by AquaLED, LLC across Buda, Kyle, Austin, and San Marcos, Texas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── Filter Tabs ── */
+    .filter-bar {
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1.3rem;
+      border-radius: 30px;
+      border: 1.5px solid rgba(13,33,55,0.18);
+      background: var(--white);
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--transition);
+      letter-spacing: 0.04em;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--green);
+      color: var(--white);
+      border-color: var(--green);
+    }
+
+    /* ── Gallery Grid ── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .gallery-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 40px rgba(13,33,55,0.18);
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Color variants */
+    .gi-1  { background: linear-gradient(135deg, #1a3f63 0%, #2E8B57 100%); }
+    .gi-2  { background: linear-gradient(135deg, #0d2137 0%, #b8860b 100%); }
+    .gi-3  { background: linear-gradient(135deg, #1a3f63 0%, #4a8fa5 100%); }
+    .gi-4  { background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); }
+    .gi-5  { background: linear-gradient(135deg, #1a3f63 0%, #2ecc71 100%); }
+    .gi-6  { background: linear-gradient(135deg, #0d2137 0%, #c0392b 100%); }
+    .gi-7  { background: linear-gradient(135deg, #155727 0%, #0d2137 100%); }
+    .gi-8  { background: linear-gradient(135deg, #1a3f63 0%, #8e44ad 100%); }
+    .gi-9  { background: linear-gradient(135deg, #0d2137 0%, #16a085 100%); }
+
+    .gallery-img-icon { font-size: 2.8rem; }
+    .gallery-img-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+    }
+
+    .gallery-img .img-photo-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0,0,0,0.4);
+      color: rgba(255,255,255,0.7);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+    }
+
+    .gallery-body {
+      padding: 1.25rem 1.4rem 1.5rem;
+    }
+
+    .gallery-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .gallery-body h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.4rem;
+      color: var(--navy);
+    }
+
+    .gallery-body p {
+      font-size: 0.87rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ── Featured project (wide) ── */
+    .gallery-card.featured {
+      grid-column: span 2;
+    }
+
+    .gallery-card.featured .gallery-img {
+      height: 320px;
+    }
+
+    @media (max-width: 700px) {
+      .gallery-card.featured { grid-column: span 1; }
+      .gallery-card.featured .gallery-img { height: 230px; }
+    }
+
+    /* ── Location badge ── */
+    .loc-badge {
+      font-size: 0.72rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .loc-badge::before { content: '📍'; font-size: 0.7rem; }
+  </style>
+</head>
+<body>
+
+  <script src="components.js"></script>
+
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label" style="color:rgba(255,255,255,0.55);">Our Work</span>
+      <h1>Project Gallery</h1>
+      <p>Real installs. Real results. Every project below was completed by our crew across Central Texas.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       GALLERY SECTION
+  ══════════════════════════════════════════════ -->
+  <section>
+    <div class="container">
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <button class="filter-btn active">All Projects</button>
+        <button class="filter-btn">Irrigation</button>
+        <button class="filter-btn">Landscape Lighting</button>
+        <button class="filter-btn">Drainage</button>
+        <button class="filter-btn">Commercial</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid">
+
+        <!-- Featured -->
+        <div class="gallery-card featured">
+          <div class="gallery-img gi-1">
+            <div class="gallery-img-icon">💧</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+            <div class="img-photo-badge">Featured Project</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Irrigation</span>
+              <span class="loc-badge">Buda, TX</span>
+            </div>
+            <h3>14-Zone Residential Irrigation System — New Construction</h3>
+            <p>Complete design and installation of a 14-zone drip and spray irrigation system for a 1-acre residential property. Custom zone layout covers turf, shrub beds, and a vegetable garden. Paired with a Rachio 3 smart controller for remote scheduling and water usage tracking. Project completed in 2 days with full restoration of disrupted lawn areas.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="gallery-card">
+          <div class="gallery-img gi-2">
+            <div class="gallery-img-icon">💡</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Lighting</span>
+              <span class="loc-badge">Austin, TX</span>
+            </div>
+            <h3>Full Property LED Lighting — Residential</h3>
+            <p>Uplights on 6 mature oak trees, path lights along a 120-ft driveway, and deck accent lighting. All wire buried 6 inches, fixtures staked and leveled. Transformer with timer installed in garage.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="gallery-card">
+          <div class="gallery-img gi-3">
+            <div class="gallery-img-icon">🌊</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Drainage</span>
+              <span class="loc-badge">Kyle, TX</span>
+            </div>
+            <h3>French Drain — Foundation Flooding Fix</h3>
+            <p>Installed 65 feet of French drain along the back of a home's foundation to redirect water that had been pooling for years. Combined with downspout extensions to tie into the drain at two points.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="gallery-card">
+          <div class="gallery-img gi-4">
+            <div class="gallery-img-icon">🏢</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Commercial</span>
+              <span class="loc-badge">San Marcos, TX</span>
+            </div>
+            <h3>Commercial Irrigation — 4-Acre Property</h3>
+            <p>Large commercial irrigation project for a mixed-use property. 22 zones covering turf, planting beds, and trees. Hunter commercial heads with a central controller and flow sensor.</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="gallery-card">
+          <div class="gallery-img gi-5">
+            <div class="gallery-img-icon">⛏️</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Trenching</span>
+              <span class="loc-badge">Buda, TX</span>
+            </div>
+            <h3>Underground Conduit Run — Detached Shop</h3>
+            <p>Trenched 140 feet of conduit from main panel to a detached shop and outbuilding. Minimal disruption to existing landscaping — sod replaced and compacted on completion.</p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="gallery-card">
+          <div class="gallery-img gi-7">
+            <div class="gallery-img-icon">💧</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Irrigation</span>
+              <span class="loc-badge">Wimberley, TX</span>
+            </div>
+            <h3>Drip Irrigation — Hill Country Property</h3>
+            <p>Custom drip system installed for a 3/4-acre property with a mix of native plants, raised beds, and orchard trees. Designed for low water use in rocky Hill Country soil.</p>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="gallery-card">
+          <div class="gallery-img gi-8">
+            <div class="gallery-img-icon">💡</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Lighting</span>
+              <span class="loc-badge">Cedar Park, TX</span>
+            </div>
+            <h3>Outdoor Lighting — Patio &amp; Pool Area</h3>
+            <p>Installed landscape uplights, step lights, and pool-perimeter accent lighting for a newly finished backyard renovation. Smart control via phone app with color temperature adjustment.</p>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="gallery-card">
+          <div class="gallery-img gi-9">
+            <div class="gallery-img-icon">🌊</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Drainage</span>
+              <span class="loc-badge">Lockhart, TX</span>
+            </div>
+            <h3>Surface Channel Drain — Commercial Parking</h3>
+            <p>Installed a linear channel drain system across a commercial parking area to prevent water from migrating toward a retail entrance. Tied into existing storm system.</p>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="gallery-card">
+          <div class="gallery-img gi-6">
+            <div class="gallery-img-icon">⛏️</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Irrigation</span>
+              <span class="loc-badge">Pflugerville, TX</span>
+            </div>
+            <h3>Irrigation Repair &amp; Upgrade — Existing System</h3>
+            <p>Diagnosed and repaired a 10-year-old irrigation system with broken zones, cracked mainline, and an outdated controller. Upgraded heads and controller, system now runs at full efficiency.</p>
+          </div>
+        </div>
+
+      </div><!-- /gallery-grid -->
+
+      <div class="text-center mt-2">
+        <p style="color:var(--gray);font-size:0.9rem;margin-bottom:1rem;">More photos being added as jobs are completed. Want to see a specific service type?</p>
+        <a href="contact.html" class="btn btn-primary">Contact Us for More Info →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Like What You See?</h2>
+      <p>Let's talk about your project. We'll give you an honest assessment and a fair estimate — no upselling.</p>
+      <a href="tel:+15125550192" class="cta-phone">(512) 555-0192</a>
+      <div class="cta-buttons">
+        <a href="tel:+15125550192" class="btn btn-primary">📞 Call Now</a>
+        <a href="contact.html" class="btn btn-outline">Request Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // Simple client-side filter
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Gallery — AquaLED, LLC | Irrigation, Lighting & Excavation Central Texas</title>
+  <meta name="description" content="View completed irrigation, landscape lighting, excavation, and concrete projects by AquaLED, LLC across Central Texas — including Bowie High School, Martin Middle School, and Dripping Springs Sports Complex." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .filter-bar { display:flex; gap:0.65rem; flex-wrap:wrap; justify-content:center; margin-bottom:3rem; }
+    .filter-btn {
+      padding:0.5rem 1.3rem; border-radius:30px;
+      border:1.5px solid rgba(10,22,40,0.15);
+      background:var(--white); color:var(--text);
+      font-family:'DM Sans',sans-serif; font-size:0.82rem; font-weight:700;
+      cursor:pointer; transition:all var(--transition); letter-spacing:0.04em;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background:var(--navy); color:var(--white); border-color:var(--navy);
+    }
+
+    .gallery-grid {
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1.75rem;
+    }
+    .gallery-card {
+      background:var(--white); border-radius:var(--radius); overflow:hidden;
+      box-shadow:var(--shadow); transition:transform var(--transition),box-shadow var(--transition);
+    }
+    .gallery-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); }
+    .gallery-card.featured { grid-column:span 2; }
+
+    .gallery-img {
+      width:100%; height:230px; display:flex; align-items:center; justify-content:center;
+      flex-direction:column; gap:0.5rem; position:relative; overflow:hidden;
+    }
+    .gallery-card.featured .gallery-img { height:320px; }
+
+    .gi-1 { background:linear-gradient(135deg,#152844 0%,#1E7A4A 100%); }
+    .gi-2 { background:linear-gradient(135deg,#0A1628 0%,#C9A84C 100%); }
+    .gi-3 { background:linear-gradient(135deg,#152844 0%,#2d6a8e 100%); }
+    .gi-4 { background:linear-gradient(135deg,#1A2535 0%,#2c3e50 100%); }
+    .gi-5 { background:linear-gradient(135deg,#2d3436 0%,#636e72 100%); }
+    .gi-6 { background:linear-gradient(135deg,#152844 0%,#7a6040 100%); }
+    .gi-7 { background:linear-gradient(135deg,#0A1628 0%,#1E7A4A 100%); }
+
+    .gallery-img-icon  { font-size:2.8rem; }
+    .gallery-img-label {
+      font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:700;
+      letter-spacing:0.1em; color:rgba(255,255,255,0.4); text-transform:uppercase;
+    }
+    .featured-badge {
+      position:absolute; top:14px; right:14px;
+      background:var(--gold); color:var(--navy);
+      font-family:'DM Sans',sans-serif; font-size:0.68rem; font-weight:800;
+      letter-spacing:0.08em; text-transform:uppercase;
+      padding:0.3rem 0.75rem; border-radius:4px;
+    }
+
+    .gallery-body { padding:1.3rem 1.4rem 1.5rem; }
+    .gallery-meta { display:flex; align-items:center; gap:0.65rem; margin-bottom:0.5rem; flex-wrap:wrap; }
+    .gallery-body h3 { font-size:0.98rem; margin-bottom:0.4rem; }
+    .gallery-body p  { font-size:0.87rem; color:var(--gray); line-height:1.6; }
+    .loc-badge { font-size:0.72rem; font-weight:600; color:var(--gray); display:flex; align-items:center; gap:0.3rem; }
+    .loc-badge::before { content:'📍'; font-size:0.7rem; }
+
+    .add-photo-note {
+      background:var(--offwhite); border:1.5px dashed rgba(10,22,40,0.15);
+      border-radius:var(--radius); padding:2rem; text-align:center; margin-top:2.5rem;
+    }
+    .add-photo-note p { color:var(--gray); font-size:0.9rem; }
+    .add-photo-note strong { color:var(--navy); }
+
+    @media (max-width:700px) {
+      .gallery-card.featured { grid-column:span 1; }
+      .gallery-card.featured .gallery-img { height:230px; }
+    }
+  </style>
+</head>
+<body>
+
+  <script src="components.js"></script>
+
+  <div class="cred-bar">
+    <div class="container">
+      <div class="cred-items">
+        <div class="cred-item"><span class="cred-icon">🛡️</span> LI #22379</div>
+        <div class="cred-item"><span class="cred-icon">✅</span> $2M General Liability</div>
+        <div class="cred-item"><span class="cred-icon">🏫</span> School &amp; Municipal Experience</div>
+        <div class="cred-item"><span class="cred-icon">⚡</span> Fast Turnaround</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label" style="color:rgba(255,255,255,0.45);">Our Work</span>
+      <h1>Project Gallery</h1>
+      <p>Real installs. Real results. Every project below was completed by our crew across Central Texas.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="filter-bar">
+        <button class="filter-btn active">All Projects</button>
+        <button class="filter-btn">Irrigation</button>
+        <button class="filter-btn">Landscape Lighting</button>
+        <button class="filter-btn">Excavation</button>
+        <button class="filter-btn">Commercial</button>
+        <button class="filter-btn">Concrete &amp; Hardscape</button>
+      </div>
+
+      <div class="gallery-grid">
+
+        <!-- Featured: Bowie HS -->
+        <div class="gallery-card featured">
+          <div class="gallery-img gi-4">
+            <div class="gallery-img-icon">⛏️</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+            <div class="featured-badge">Featured Project</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Excavation</span>
+              <span class="project-tag" style="background:rgba(30,122,74,0.1);color:var(--green);">Commercial</span>
+              <span class="loc-badge">Austin, TX</span>
+            </div>
+            <h3>Bowie High School — Chiller &amp; Return Line Excavation</h3>
+            <p>Excavated approximately 1,500 linear feet for new chiller and return lines at Bowie High School. Large-scale commercial site work completed on schedule for Austin ISD. Precision trenching through an active school campus with minimal disruption to surrounding infrastructure.</p>
+          </div>
+        </div>
+
+        <!-- Martin Middle School -->
+        <div class="gallery-card">
+          <div class="gallery-img gi-1">
+            <div class="gallery-img-icon">💧</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Irrigation</span>
+              <span class="loc-badge">Austin, TX</span>
+            </div>
+            <h3>Martin Middle School — Athletic Field Irrigation</h3>
+            <p>New commercial irrigation system installed across athletic fields. Engineered for full turf coverage with commercial-grade heads and a centralized controller. Designed for easy seasonal management.</p>
+          </div>
+        </div>
+
+        <!-- Dripping Springs Sports Complex -->
+        <div class="gallery-card">
+          <div class="gallery-img gi-3">
+            <div class="gallery-img-icon">💧</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Irrigation</span>
+              <span class="project-tag" style="background:rgba(30,122,74,0.1);color:var(--green);">Commercial</span>
+              <span class="loc-badge">Dripping Springs, TX</span>
+            </div>
+            <h3>Dripping Springs Sports Complex — Softball Fields</h3>
+            <p>Two complete irrigation systems installed for softball fields at the Dripping Springs Sports Complex. Independent zone management per field, commercial-grade heads, and dual controller setup for flexible scheduling.</p>
+          </div>
+        </div>
+
+        <!-- 45-Fixture Lighting -->
+        <div class="gallery-card">
+          <div class="gallery-img gi-2">
+            <div class="gallery-img-icon">💡</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Landscape Lighting</span>
+              <span class="loc-badge">Central Texas</span>
+            </div>
+            <h3>45-Fixture Dim &amp; Color Lighting System</h3>
+            <p>Full design and installation of a 45-fixture landscape lighting system with dimming and color-temperature control. All wiring buried, fixtures properly anchored and leveled, custom transformer setup, and full zone programming completed on-site.</p>
+          </div>
+        </div>
+
+        <!-- Residential Irrigation -->
+        <div class="gallery-card">
+          <div class="gallery-img gi-7">
+            <div class="gallery-img-icon">💧</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Irrigation</span>
+              <span class="loc-badge">Buda, TX</span>
+            </div>
+            <h3>Residential Irrigation — New Construction Install</h3>
+            <p>Custom multi-zone irrigation system for a new construction home. Smart Wi-Fi controller, rain sensor, and separate zones for turf, shrub beds, and trees. Completed in one day with full site restoration.</p>
+          </div>
+        </div>
+
+        <!-- Hardscape -->
+        <div class="gallery-card">
+          <div class="gallery-img gi-6">
+            <div class="gallery-img-icon">🪨</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Hardscape</span>
+              <span class="loc-badge">Kyle, TX</span>
+            </div>
+            <h3>Backyard Patio &amp; Walkway</h3>
+            <p>Designed and installed a natural stone patio with connecting walkway for a residential backyard. Proper drainage slope, compacted base, and clean edge detailing throughout.</p>
+          </div>
+        </div>
+
+        <!-- Concrete -->
+        <div class="gallery-card">
+          <div class="gallery-img gi-5">
+            <div class="gallery-img-icon">🧱</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Concrete</span>
+              <span class="loc-badge">San Marcos, TX</span>
+            </div>
+            <h3>Commercial Concrete Flatwork</h3>
+            <p>Poured and finished a large concrete pad for commercial use. Proper sub-base preparation, control joints placed to spec, and a broom finish for texture. Completed on schedule.</p>
+          </div>
+        </div>
+
+        <!-- Landscape -->
+        <div class="gallery-card">
+          <div class="gallery-img gi-1">
+            <div class="gallery-img-icon">🌿</div>
+            <div class="gallery-img-label">Add Project Photo Here</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta">
+              <span class="project-tag">Landscape</span>
+              <span class="loc-badge">Buda, TX</span>
+            </div>
+            <h3>Full Landscape Install — Residential Property</h3>
+            <p>Complete landscape installation including plant beds, sod, mulch, and edging. Paired with a new irrigation system for a turnkey outdoor transformation on a newly built home.</p>
+          </div>
+        </div>
+
+      </div><!-- /gallery-grid -->
+
+      <!-- Photo upload note for client -->
+      <div class="add-photo-note">
+        <p>📸 <strong>Ready to add your project photos?</strong> Replace each gradient block above with a real photo by swapping the placeholder div with an <code>&lt;img&gt;</code> tag. Need help? Just ask.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Like What You See?</h2>
+      <p>Let's talk about your project. We'll give you an honest assessment and a fair estimate — no upselling, ever.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-gold">Request Free Estimate</a>
+        <a href="sms:+15126572152" class="btn btn-outline">💬 Text (512) 657-2152</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

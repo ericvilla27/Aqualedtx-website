@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact AquaLED, LLC — Free Estimates | Central Texas Outdoor Contractor</title>
+  <meta name="description" content="Request a free estimate from AquaLED, LLC. Text (512) 657-2152 or email info@aqualedllc.com. Serving all of Central Texas — irrigation, lighting, excavation, concrete, hardscape, and landscape." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-layout {
+      display:grid; grid-template-columns:1fr 1.5fr; gap:5rem; align-items:start;
+    }
+
+    .contact-info > p { color:var(--gray); line-height:1.75; margin-bottom:2rem; }
+
+    .contact-card {
+      background:var(--offwhite); border-radius:var(--radius); padding:1.4rem 1.5rem;
+      margin-bottom:1rem; display:flex; align-items:center; gap:1rem;
+      transition:box-shadow var(--transition); text-decoration:none;
+    }
+    .contact-card:hover { box-shadow:var(--shadow); }
+    .contact-card-icon {
+      width:48px; height:48px; background:var(--gold); border-radius:10px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.3rem; flex-shrink:0; color:var(--navy);
+    }
+    .contact-card-info h4 { font-size:0.78rem; text-transform:uppercase; letter-spacing:0.07em; color:var(--gray); margin-bottom:0.25rem; }
+    .contact-card-info a,
+    .contact-card-info p  { font-size:1rem; font-weight:700; color:var(--navy); font-family:'DM Sans',sans-serif; margin:0; }
+    .contact-card-info a:hover { color:var(--green); }
+    .contact-card-info .sub { font-size:0.78rem; color:var(--gray); font-weight:400; display:block; margin-top:0.15rem; }
+
+    .preferred-badge {
+      display:inline-block; background:rgba(30,122,74,0.1); color:var(--green);
+      font-size:0.68rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase;
+      padding:0.15rem 0.55rem; border-radius:4px; margin-left:0.4rem; vertical-align:middle;
+    }
+
+    .hours-list { margin-top:1rem; }
+    .hours-row { display:flex; justify-content:space-between; padding:0.45rem 0; border-bottom:1px solid rgba(0,0,0,0.06); font-size:0.9rem; }
+    .hours-row:last-child { border-bottom:none; }
+    .hours-row .day   { color:var(--gray); }
+    .hours-row .time  { font-weight:700; color:var(--navy); }
+    .hours-row .closed{ font-weight:700; color:#c0392b; }
+
+    .form-card {
+      background:var(--white); border-radius:var(--radius);
+      box-shadow:0 8px 48px rgba(10,22,40,0.12); padding:2.5rem;
+      border-top:4px solid var(--gold);
+    }
+    .form-card h3 { font-size:1.35rem; margin-bottom:0.4rem; }
+    .form-card .form-intro { color:var(--gray); font-size:0.9rem; margin-bottom:1.75rem; line-height:1.65; }
+
+    .form-submit-row { margin-top:1.5rem; display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; }
+    .form-submit-note { font-size:0.82rem; color:var(--gray); }
+    .form-submit-note strong { color:var(--green); }
+
+    .form-success {
+      display:none; background:rgba(30,122,74,0.07);
+      border:1.5px solid var(--green); border-radius:var(--radius);
+      padding:2rem; text-align:center; margin-top:1.5rem;
+    }
+    .form-success h4 { color:var(--green); margin-bottom:0.5rem; font-size:1.1rem; }
+    .form-success p  { font-size:0.9rem; color:var(--gray); }
+
+    .faq-list { display:flex; flex-direction:column; gap:1rem; margin-top:2rem; }
+    .faq-item { background:var(--white); border-radius:var(--radius); border:1.5px solid rgba(0,0,0,0.07); overflow:hidden; }
+    .faq-q {
+      padding:1.1rem 1.4rem; display:flex; justify-content:space-between; align-items:center;
+      cursor:pointer; font-weight:700; font-size:0.95rem; color:var(--navy);
+      gap:1rem; user-select:none;
+    }
+    .faq-arrow { color:var(--gold); font-size:1rem; flex-shrink:0; transition:transform var(--transition); }
+    .faq-item.open .faq-arrow { transform:rotate(180deg); }
+    .faq-a { display:none; padding:0 1.4rem 1.25rem; color:var(--gray); font-size:0.92rem; line-height:1.7; }
+    .faq-item.open .faq-a { display:block; }
+
+    @media(max-width:900px){
+      .contact-layout { grid-template-columns:1fr; gap:2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <script src="components.js"></script>
+
+  <div class="cred-bar">
+    <div class="container">
+      <div class="cred-items">
+        <div class="cred-item"><span class="cred-icon">⚡</span> Fast Response</div>
+        <div class="cred-item"><span class="cred-icon">✅</span> Free Estimates</div>
+        <div class="cred-item"><span class="cred-icon">🛡️</span> LI #22379 · $2M Liability</div>
+        <div class="cred-item"><span class="cred-icon">📍</span> All of Central Texas</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label" style="color:rgba(255,255,255,0.45);">Get In Touch</span>
+      <h1>Request a Free Estimate</h1>
+      <p>Text or email us — we respond fast and will follow up to get your project scheduled.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- LEFT: Contact Info -->
+        <div class="contact-info">
+          <span class="section-label">Reach Out</span>
+          <h2>We're Easy to Reach</h2>
+          <p>Text is the fastest way to get a response. If you'd rather fill out the form, we'll get back to you the same day — usually within a few hours.</p>
+
+          <a href="sms:+15126572152" class="contact-card">
+            <div class="contact-card-icon">💬</div>
+            <div class="contact-card-info">
+              <h4>Text <span class="preferred-badge">Preferred</span></h4>
+              <a href="sms:+15126572152">(512) 657-2152</a>
+              <span class="sub">Fastest response — text us anytime</span>
+            </div>
+          </a>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">✉️</div>
+            <div class="contact-card-info">
+              <h4>Email</h4>
+              <a href="mailto:info@aqualedllc.com">info@aqualedllc.com</a>
+              <span class="sub">Great for sending photos of your project</span>
+            </div>
+          </div>
+
+          <div class="contact-card" style="cursor:default;">
+            <div class="contact-card-icon">📍</div>
+            <div class="contact-card-info">
+              <h4>Service Area</h4>
+              <p>All of Central Texas</p>
+              <span class="sub">Buda · Kyle · Austin · San Marcos · Dripping Springs · and beyond</span>
+            </div>
+          </div>
+
+          <div style="margin-top:1.5rem;">
+            <h4 style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--navy);margin-bottom:0.75rem;">Business Hours</h4>
+            <div class="hours-list">
+              <div class="hours-row"><span class="day">Monday – Friday</span><span class="time">7:00 AM – 6:00 PM</span></div>
+              <div class="hours-row"><span class="day">Saturday</span><span class="time">8:00 AM – 2:00 PM</span></div>
+              <div class="hours-row"><span class="day">Sunday</span><span class="closed">Closed</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1.75rem;background:var(--offwhite);border-radius:var(--radius);padding:1.25rem 1.4rem;border-left:3px solid var(--gold);">
+            <p style="font-size:0.88rem;color:var(--gray);margin:0;line-height:1.65;">
+              <strong style="color:var(--navy);">No scheduling tool on this site</strong> — we contact you directly after receiving your request to set up a site visit at a time that works for you.
+            </p>
+          </div>
+        </div>
+
+        <!-- RIGHT: Form -->
+        <div>
+          <div class="form-card">
+            <h3>Request Your Free Estimate</h3>
+            <p class="form-intro">Fill out the form below and we'll follow up to schedule a site visit. Most estimates are provided within 24–48 hours of the visit. No obligation, no pressure.</p>
+
+            <form id="contactForm" novalidate>
+              <div class="form-grid">
+                <div class="form-group full">
+                  <label for="name">Full Name *</label>
+                  <input type="text" id="name" name="name" placeholder="John Smith" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" placeholder="(512) 555-0000" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="john@email.com" />
+                </div>
+                <div class="form-group full">
+                  <label for="address">Property Address *</label>
+                  <input type="text" id="address" name="address" placeholder="123 Main St, Buda, TX 78610" required />
+                </div>
+                <div class="form-group full">
+                  <label for="service">Service Needed *</label>
+                  <select id="service" name="service" required>
+                    <option value="">— Select a Service —</option>
+                    <option value="irrigation-install">Irrigation — New Install</option>
+                    <option value="irrigation-repair">Irrigation — Repair / Upgrade</option>
+                    <option value="lighting">Landscape Lighting</option>
+                    <option value="hardscape">Hardscape</option>
+                    <option value="excavation">Excavation</option>
+                    <option value="concrete">Concrete Work</option>
+                    <option value="landscape">Landscape</option>
+                    <option value="multiple">Multiple Services</option>
+                    <option value="unsure">Not Sure — Need Advice</option>
+                  </select>
+                </div>
+                <div class="form-group full">
+                  <label for="message">Brief Description *</label>
+                  <textarea id="message" name="message" placeholder="Tell us what you're looking to have done. The more detail you can share, the better we can prepare for our visit." required></textarea>
+                </div>
+              </div>
+
+              <div class="form-submit-row">
+                <button type="submit" class="btn btn-gold" style="font-size:1rem;padding:0.9rem 2.1rem;">
+                  Send Estimate Request →
+                </button>
+                <span class="form-submit-note">
+                  <strong>No spam, ever.</strong> We only contact you about your project.
+                </span>
+              </div>
+            </form>
+
+            <div class="form-success" id="formSuccess">
+              <h4>✅ Request Received!</h4>
+              <p>Thanks for reaching out. We'll follow up within one business day — usually the same day. If it's urgent, text us at <strong>(512) 657-2152</strong>.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-offwhite">
+    <div class="container" style="max-width:780px;">
+      <div class="section-header">
+        <span class="section-label">Common Questions</span>
+        <h2>Good to Know Before You Reach Out</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-q">Do you offer free estimates? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Yes — all estimates are free. We visit your property, assess what needs to be done, and provide a written quote. No obligation to proceed.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How fast can you start? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">It depends on current workload, but we work to get estimates scheduled quickly and most jobs begin within a reasonable timeframe after approval. We'll give you a realistic start date as part of your estimate.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How long do most jobs take? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Most projects are completed in under a week. Residential irrigation installs are often done in 1–2 days. Larger commercial or multi-service jobs take longer — we'll outline the timeline clearly in your estimate.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Do you work on commercial properties? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Yes. We have extensive commercial experience — including school campuses (Bowie High School, Martin Middle School), sports complexes (Dripping Springs), and multi-acre commercial sites. Contact us to discuss your project scope.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Are you licensed and insured? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Yes. We hold a Texas Licensed Irrigator certification (LI #22379) and carry $2 million in general liability insurance. Proof of insurance is available on request before any job begins.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Do you do irrigation repairs, or only new installs? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Both. We diagnose and repair existing systems — broken heads, zone failures, controller issues, and damaged lines. Many repairs can be completed in a single visit.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Still Have Questions? Just Text Us.</h2>
+      <p>We'd rather answer a quick question now than have you wonder. Reach out — we respond fast.</p>
+      <div class="cta-buttons">
+        <a href="sms:+15126572152" class="btn btn-gold">💬 Text (512) 657-2152</a>
+        <a href="mailto:info@aqualedllc.com" class="btn btn-outline">✉️ info@aqualedllc.com</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', function () {
+        const item = this.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Form submission
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const required = this.querySelectorAll('[required]');
+      let valid = true;
+      required.forEach(f => {
+        if (!f.value.trim()) { f.style.borderColor = '#e74c3c'; valid = false; }
+        else { f.style.borderColor = ''; }
+      });
+      if (!valid) return;
+      const btn = this.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending…'; btn.disabled = true;
+      setTimeout(() => {
+        this.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      }, 900);
+    });
+  </script>
+
+</body>
+</html>

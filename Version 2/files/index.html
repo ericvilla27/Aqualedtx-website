@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AquaLED, LLC — Irrigation, Landscape Lighting, Excavation &amp; Concrete | Central Texas</title>
+  <meta name="description" content="AquaLED, LLC is Central Texas' trusted outdoor contractor specializing in commercial irrigation, landscape lighting, hardscape, excavation, and concrete work. Serving all of Central Texas — fast turnaround, direct communication." />
+  <meta name="keywords" content="irrigation installation Central Texas, commercial irrigation Austin TX, landscape lighting Austin, excavation contractor Buda TX, concrete flatwork Kyle TX, irrigation repair San Marcos" />
+  <link rel="canonical" href="https://www.aqualedllc.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── HERO ── */
+    .home-hero {
+      min-height: 94vh;
+      background:
+        linear-gradient(to bottom, rgba(10,22,40,0.7) 0%, rgba(10,22,40,0.5) 55%, rgba(10,22,40,0.88) 100%),
+        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&auto=format&fit=crop') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-content { max-width: 780px; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: #e8c96a;
+      font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.4rem 1.1rem; border-radius: 30px; margin-bottom: 1.6rem;
+    }
+    .hero-badge::before {
+      content: ''; width: 7px; height: 7px;
+      background: var(--gold); border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:0.4; transform:scale(1.4); }
+    }
+
+    .home-hero h1 {
+      color: var(--white); font-size: clamp(2.4rem, 6vw, 3.8rem);
+      line-height: 1.1; margin-bottom: 1.3rem;
+    }
+    .home-hero h1 em { font-style:normal; color: var(--gold); }
+
+    .hero-sub {
+      color: rgba(255,255,255,0.78); font-size: clamp(1rem, 2vw, 1.18rem);
+      max-width: 600px; margin-bottom: 2.25rem; line-height: 1.7;
+    }
+
+    .hero-ctas { display:flex; gap:1rem; flex-wrap:wrap; }
+    .hero-ctas .btn { font-size: 1rem; padding: 0.95rem 2rem; }
+
+    .hero-stats {
+      display: flex; gap: 2.5rem; margin-top: 3.5rem; flex-wrap: wrap;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 700;
+      color: var(--gold); line-height: 1;
+    }
+    .hero-stat .stat-label {
+      font-size: 0.75rem; color: rgba(255,255,255,0.5);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.25rem;
+    }
+
+    .hero-scroll {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,0.35); font-size: 0.72rem;
+      letter-spacing: 0.12em; text-transform: uppercase; text-align: center;
+    }
+    .hero-scroll::after { content:'↓'; display:block; margin-top:0.3rem; font-size:1rem; animation:bounce 2s infinite; }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(7px)} }
+
+    /* ── WHY INTRO ── */
+    .why-intro {
+      display:grid; grid-template-columns:1fr 1fr; gap:4.5rem; align-items:center; margin-bottom:3.5rem;
+    }
+    .why-text p { color:var(--gray); margin-top:1rem; font-size:1.02rem; line-height:1.8; }
+    .why-quote {
+      background:var(--offwhite);
+      border-left: 4px solid var(--gold);
+      padding:2rem 2rem 2rem 1.75rem;
+      border-radius:0 var(--radius) var(--radius) 0;
+    }
+    .why-quote blockquote { font-family:'Playfair Display',serif; font-size:1.08rem; color:var(--navy); font-style:italic; line-height:1.7; }
+    .why-quote cite { display:block; margin-top:1rem; font-size:0.82rem; color:var(--gray); font-style:normal; font-weight:700; }
+
+    @media(max-width:800px){
+      .why-intro{grid-template-columns:1fr;gap:2rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <script src="components.js"></script>
+
+  <!-- Credentials bar -->
+  <div class="cred-bar">
+    <div class="container">
+      <div class="cred-items">
+        <div class="cred-item"><span class="cred-icon">🛡️</span> Licensed Irrigator LI #22379</div>
+        <div class="cred-item"><span class="cred-icon">✅</span> $2M General Liability Insurance</div>
+        <div class="cred-item"><span class="cred-icon">⭐</span> 5 Years in Business</div>
+        <div class="cred-item"><span class="cred-icon">📍</span> All of Central Texas</div>
+        <div class="cred-item"><span class="cred-icon">⚡</span> Most Jobs Completed in Under a Week</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <section class="home-hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">Now Booking Commercial &amp; Residential Projects</div>
+        <h1>The Outdoor Contractor<br>Central Texas <em>Trusts.</em></h1>
+        <p class="hero-sub">
+          AquaLED, LLC delivers fast, high-quality irrigation, landscape lighting, hardscape, excavation, and concrete work across Central Texas — with direct communication, no upselling, and most jobs done in under a week.
+        </p>
+        <div class="hero-ctas">
+          <a href="contact.html" class="btn btn-gold">Request Free Estimate</a>
+          <a href="sms:+15126572152" class="btn btn-outline">💬 Text Us: (512) 657-2152</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-num">5+</div>
+            <div class="stat-label">Years in Business</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-num">&lt;7</div>
+            <div class="stat-label">Days to Complete Most Jobs</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-num">$2M</div>
+            <div class="stat-label">General Liability</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-num">Res+Com</div>
+            <div class="stat-label">Residential &amp; Commercial</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">Scroll to explore</div>
+  </section>
+
+  <!-- ══ TRUST BAR ══ -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-items">
+        <div class="trust-item">
+          <div class="trust-icon">💬</div>
+          <div>
+            <h4>Direct Communication</h4>
+            <p>You talk to the person running your job — not a dispatcher or call center.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">⚡</div>
+          <div>
+            <h4>Fast Turnaround</h4>
+            <p>Organized crew. Most projects completed in less than a week.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🏗️</div>
+          <div>
+            <h4>Commercial Experience</h4>
+            <p>Schools, sports complexes, commercial properties — we've done it.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🚫</div>
+          <div>
+            <h4>No Upselling</h4>
+            <p>We listen to what you need and quote exactly that — nothing more.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SERVICES ══ -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What We Do</span>
+        <h2>Full-Service Outdoor Contractor</h2>
+        <div class="divider"></div>
+        <p>From underground excavation to landscape lighting that turns heads at night — one crew, multiple capabilities, zero corners cut.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-card-body">
+            <div class="service-icon">💧</div>
+            <h3>Irrigation</h3>
+            <p>Custom residential and commercial irrigation systems designed for efficiency. New installs, retrofits, and repairs — including large-scale athletic field and commercial site irrigation.</p>
+            <a href="services.html#irrigation" class="card-link">Learn More →</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card-body">
+            <div class="service-icon">💡</div>
+            <h3>Landscape Lighting</h3>
+            <p>Low-voltage LED systems that elevate your property after dark. Uplights, path lights, deck accents — fully buried wiring, smart controls available.</p>
+            <a href="services.html#lighting" class="card-link">Learn More →</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card-body">
+            <div class="service-icon">🪨</div>
+            <h3>Hardscape</h3>
+            <p>Patios, walkways, retaining walls, and outdoor structures built to last in the Texas climate. Form meets function on every hardscape project.</p>
+            <a href="services.html#hardscape" class="card-link">Learn More →</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card-body">
+            <div class="service-icon">🏗️</div>
+            <h3>Excavation</h3>
+            <p>Precision excavation for underground utilities, chiller lines, drainage, and site prep. From residential trenching to large-scale commercial excavation.</p>
+            <a href="services.html#excavation" class="card-link">Learn More →</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card-body">
+            <div class="service-icon">🧱</div>
+            <h3>Concrete Work</h3>
+            <p>Flatwork, driveways, sidewalks, pads, and foundations. We pour it right the first time — clean edges, proper slope, and a finish that holds up.</p>
+            <a href="services.html#concrete" class="card-link">Learn More →</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card-body">
+            <div class="service-icon">🌿</div>
+            <h3>Landscape</h3>
+            <p>Full landscape installation and enhancement — plant beds, mulch, sod, and general outdoor aesthetics that add real value to your property.</p>
+            <a href="services.html#landscape" class="card-link">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROJECTS ══ -->
+  <section class="bg-offwhite">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Featured Work</span>
+        <h2>Real Projects. Real Results.</h2>
+        <div class="divider"></div>
+        <p>We've worked on schools, sports complexes, and residential properties across Central Texas. Here's a sample of what we've delivered.</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-img img-1">
+            <div class="project-img-icon">⛏️</div>
+            <div class="project-img-label">Add Project Photo</div>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">Excavation</span>
+            <h3>Bowie High School — Chiller Line Excavation</h3>
+            <p>Excavated approximately 1,500 linear feet for new chiller and return lines. Large-scale commercial site work completed on schedule for Austin ISD.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img img-2">
+            <div class="project-img-icon">💧</div>
+            <div class="project-img-label">Add Project Photo</div>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">Commercial Irrigation</span>
+            <h3>Martin Middle School — Field Irrigation</h3>
+            <p>New commercial irrigation system for athletic fields. Engineered for full coverage across multiple turf zones with commercial-grade heads and controllers.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img img-3">
+            <div class="project-img-icon">💧</div>
+            <div class="project-img-label">Add Project Photo</div>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">Commercial Irrigation</span>
+            <h3>Dripping Springs Sports Complex — Softball Fields</h3>
+            <p>Two complete irrigation systems installed for softball fields at the Dripping Springs Sports Complex. Dual-system layout for independent zone management.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img img-2">
+            <div class="project-img-icon">💡</div>
+            <div class="project-img-label">Add Project Photo</div>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">Landscape Lighting</span>
+            <h3>45-Fixture Dim &amp; Color Lighting System</h3>
+            <p>Full design and install of a 45-fixture landscape lighting system with dimming and color-temperature control. Buried wiring, custom transformer setup, and zone programming.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-2">
+        <a href="gallery.html" class="btn btn-dark">View All Projects →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHY AQUALED ══ -->
+  <section>
+    <div class="container">
+      <div class="why-intro">
+        <div class="why-text">
+          <span class="section-label">Why AquaLED</span>
+          <h2>Small Business. Direct Access. Big Results.</h2>
+          <p>When you hire AquaLED, you're not dealing with a franchise or a company that subs out your job to whoever's available. You're working directly with the person in charge of the work — from estimate to final walkthrough.</p>
+          <p>We built this business around three things: transparency, speed, and craftsmanship. We don't oversell. We don't disappear after the estimate. And we don't drag jobs out for weeks when they can be done in days.</p>
+          <div style="margin-top:1.75rem;">
+            <a href="about.html" class="btn btn-primary">Our Story →</a>
+          </div>
+        </div>
+        <div class="why-quote">
+          <blockquote>
+            "We're a small business — and that's a feature, not a limitation. You speak directly to the person in charge of your job. We listen to what you need instead of trying to upsell everything. That's how we do it."
+          </blockquote>
+          <cite>— AquaLED, LLC · Central Texas</cite>
+        </div>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-number">&lt;7</div>
+          <h3>Days to Completion</h3>
+          <p>Most jobs wrapped in under a week. We don't drag it out.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-number">0</div>
+          <h3>Upselling</h3>
+          <p>We quote what you need. Nothing padded, nothing hidden.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-number">1:1</div>
+          <h3>Direct Access</h3>
+          <p>You talk to the crew lead — not a middleman or scheduler.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-number">$2M</div>
+          <h3>Liability Coverage</h3>
+          <p>Fully insured and licensed. Your property is always protected.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SERVICE AREA ══ -->
+  <section class="area-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Service Area</span>
+        <h2>All of Central Texas</h2>
+        <div class="divider"></div>
+        <p>Based in Central Texas and serving the entire region — residential neighborhoods, commercial properties, school districts, and municipal projects.</p>
+      </div>
+      <div class="area-tags" style="justify-content:center;">
+        <span class="area-tag">Buda, TX</span>
+        <span class="area-tag">Kyle, TX</span>
+        <span class="area-tag">Austin, TX</span>
+        <span class="area-tag">San Marcos, TX</span>
+        <span class="area-tag">Lockhart, TX</span>
+        <span class="area-tag">Dripping Springs, TX</span>
+        <span class="area-tag">Wimberley, TX</span>
+        <span class="area-tag">Pflugerville, TX</span>
+        <span class="area-tag">Cedar Park, TX</span>
+        <span class="area-tag">Round Rock, TX</span>
+        <span class="area-tag">Hays County</span>
+        <span class="area-tag">Travis County</span>
+        <span class="area-tag">Caldwell County</span>
+        <span class="area-tag">All of Central Texas</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section class="cta-banner">
+    <div class="container">
+      <span class="section-label" style="color:rgba(255,255,255,0.45);">Get Started</span>
+      <h2>Ready to Get Your Project Done Right?</h2>
+      <p>Text or email us to get started — we'll respond fast and get your estimate scheduled.</p>
+      <div class="cta-buttons" style="margin-bottom:0.5rem;">
+        <a href="contact.html" class="btn btn-gold">Request Free Estimate</a>
+        <a href="sms:+15126572152" class="btn btn-outline">💬 Text (512) 657-2152</a>
+        <a href="mailto:info@aqualedllc.com" class="btn btn-outline">✉️ Email Us</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+</body>
+</html>

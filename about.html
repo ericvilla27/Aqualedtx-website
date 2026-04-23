@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About AquaLED, LLC — Local Irrigation &amp; Outdoor Contractor | Buda, TX</title>
+  <meta name="description" content="Learn about AquaLED, LLC — a locally owned outdoor contractor based in Buda, Texas, serving Central Texas with irrigation, landscape lighting, and drainage services." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── About page styles ── */
+    .about-story {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-photo-stack {
+      position: relative;
+    }
+
+    .about-photo-main {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 50%, var(--green) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      box-shadow: 0 16px 56px rgba(13,33,55,0.25);
+    }
+
+    .about-photo-main .photo-icon { font-size: 4rem; }
+    .about-photo-main .photo-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      margin-top: 0.75rem;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--green);
+      color: var(--white);
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      min-width: 140px;
+    }
+
+    .about-badge .badge-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1;
+      display: block;
+    }
+
+    .about-badge .badge-label {
+      font-size: 0.78rem;
+      opacity: 0.85;
+      line-height: 1.3;
+      display: block;
+      margin-top: 0.3rem;
+    }
+
+    .about-text .section-label { margin-top: 0; }
+
+    .about-text h2 { margin-bottom: 1.25rem; }
+
+    .about-text p {
+      color: var(--gray);
+      margin-bottom: 1.1rem;
+      line-height: 1.8;
+      font-size: 1.02rem;
+    }
+
+    .about-text p strong { color: var(--navy); font-weight: 700; }
+
+    .about-values {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .about-value {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .about-value-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(46,139,87,0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .about-value-text h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+      color: var(--navy);
+    }
+
+    .about-value-text p {
+      font-size: 0.88rem;
+      margin-bottom: 0;
+      color: var(--gray);
+    }
+
+    /* ── Team Section ── */
+    .commitment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .commitment-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition);
+    }
+
+    .commitment-card:hover { transform: translateY(-4px); }
+
+    .commitment-card .c-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .commitment-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .commitment-card p {
+      font-size: 0.87rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ── License Box ── */
+    .license-box {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .license-icon {
+      font-size: 3rem;
+      flex-shrink: 0;
+    }
+
+    .license-text h3 {
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .license-text p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    @media (max-width: 800px) {
+      .about-story { grid-template-columns: 1fr; gap: 3rem; }
+      .about-badge  { right: 0.5rem; bottom: -1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <script src="components.js"></script>
+
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label" style="color:rgba(255,255,255,0.55);">Our Story</span>
+      <h1>About AquaLED, LLC</h1>
+      <p>A locally owned outdoor contractor built on showing up, doing the job right, and treating your property with respect.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       STORY SECTION
+  ══════════════════════════════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="about-story">
+
+        <div class="about-photo-stack">
+          <div class="about-photo-main">
+            <div class="photo-icon">🌿</div>
+            <div class="photo-label">Add Team Photo Here</div>
+          </div>
+          <div class="about-badge">
+            <span class="badge-number">100%</span>
+            <span class="badge-label">Locally Owned &amp; Operated</span>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <span class="section-label">Who We Are</span>
+          <h2>Built in Central Texas. Built to Last.</h2>
+          <p>
+            AquaLED, LLC started because we saw a gap in the market — too many outdoor contractors in the Austin area were taking on more work than they could handle, giving homeowners the runaround, or cutting corners to finish faster. We decided to do it differently.
+          </p>
+          <p>
+            We're a small, focused team based in Buda, TX. We specialize in irrigation systems, LED landscape lighting, drainage solutions, and underground utility work — and we do each of those things well. We don't spread ourselves thin trying to be everything to everyone.
+          </p>
+          <p>
+            <strong>What that means for you:</strong> when you hire AquaLED, you're working directly with the people designing and installing your system. You can ask questions, change your mind before we start, and expect straight answers about cost, timeline, and what we recommend.
+          </p>
+          <p>
+            We've worked on everything from small backyard irrigation installs for homeowners in Kyle to multi-acre commercial irrigation systems in San Marcos. The job size doesn't matter — the work quality does.
+          </p>
+
+          <div class="about-values">
+            <div class="about-value">
+              <div class="about-value-icon">📞</div>
+              <div class="about-value-text">
+                <h4>We Actually Answer</h4>
+                <p>You'll talk to us directly — not a call center. We return calls and messages the same day.</p>
+              </div>
+            </div>
+            <div class="about-value">
+              <div class="about-value-icon">📅</div>
+              <div class="about-value-text">
+                <h4>We Show Up On Time</h4>
+                <p>If we schedule a job for Tuesday morning, we're there Tuesday morning. No excuses, no ghosting.</p>
+              </div>
+            </div>
+            <div class="about-value">
+              <div class="about-value-icon">🏡</div>
+              <div class="about-value-text">
+                <h4>We Respect Your Property</h4>
+                <p>We leave every job cleaner than we found it. Disrupted areas are restored before we pack up.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- /about-story -->
+
+      <!-- License / Trust Box -->
+      <div class="license-box">
+        <div class="license-icon">🛡️</div>
+        <div class="license-text">
+          <h3>Licensed, Insured, and Operating by the Book</h3>
+          <p>
+            AquaLED, LLC is fully licensed in the state of Texas and carries general liability insurance on every job. We call 811 before every dig, we pull permits when required, and we don't cut corners that could create problems for you down the road. Your property is protected — and so is our reputation.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       OUR COMMITMENTS
+  ══════════════════════════════════════════════ -->
+  <section class="bg-offwhite">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What We Stand Behind</span>
+        <h2>Our Commitments to Every Customer</h2>
+        <p>These aren't marketing bullet points — they're the standard we hold ourselves to on every single job, regardless of size.</p>
+      </div>
+
+      <div class="commitment-grid">
+        <div class="commitment-card">
+          <div class="c-icon">📋</div>
+          <h3>Detailed Estimates</h3>
+          <p>You'll know exactly what we're doing, how much it costs, and why — before any work begins.</p>
+        </div>
+        <div class="commitment-card">
+          <div class="c-icon">🔧</div>
+          <h3>Quality Materials</h3>
+          <p>We use name-brand irrigation heads, commercial-grade wire, and durable fixtures — not cheap substitutes.</p>
+        </div>
+        <div class="commitment-card">
+          <div class="c-icon">🧹</div>
+          <h3>Clean Jobsite</h3>
+          <p>We haul out our trash, fill our trenches, and restore any disturbed areas before the job is closed.</p>
+        </div>
+        <div class="commitment-card">
+          <div class="c-icon">📸</div>
+          <h3>Walk-Through on Completion</h3>
+          <p>Every completed job gets a full walk-through so you understand how to operate and maintain your new system.</p>
+        </div>
+        <div class="commitment-card">
+          <div class="c-icon">📞</div>
+          <h3>Post-Install Support</h3>
+          <p>Have a question after the job is done? Call us. We stand behind our work and we'll come back if something's off.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICE AREA ── -->
+  <section class="area-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Where We Work</span>
+        <h2>Serving Central Texas Since Day One</h2>
+        <p>We primarily serve communities in and around Buda, TX — but don't hesitate to reach out if you're outside our typical range. We'll let you know if we can make it work.</p>
+      </div>
+      <div class="area-tags" style="justify-content:center;">
+        <span class="area-tag">Buda, TX</span>
+        <span class="area-tag">Kyle, TX</span>
+        <span class="area-tag">Austin, TX</span>
+        <span class="area-tag">San Marcos, TX</span>
+        <span class="area-tag">Lockhart, TX</span>
+        <span class="area-tag">Wimberley, TX</span>
+        <span class="area-tag">Pflugerville, TX</span>
+        <span class="area-tag">Cedar Park, TX</span>
+        <span class="area-tag">Round Rock, TX</span>
+        <span class="area-tag">Hays County</span>
+        <span class="area-tag">Travis County</span>
+        <span class="area-tag">Caldwell County</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready to Work With a Contractor You Can Trust?</h2>
+      <p>Call us directly or send a message — we'll get back to you the same day, Monday through Saturday.</p>
+      <a href="tel:+15125550192" class="cta-phone">(512) 555-0192</a>
+      <div class="cta-buttons">
+        <a href="tel:+15125550192" class="btn btn-primary">📞 Call Now</a>
+        <a href="contact.html" class="btn btn-outline">Request Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+</body>
+</html>
