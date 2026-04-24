@@ -7,7 +7,7 @@
   <meta name="description" content="Learn about AquaLED, LLC — a locally owned outdoor contractor based in Buda, Texas, serving Central Texas with irrigation, landscape lighting, and drainage services." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
   <style>
@@ -28,7 +28,7 @@
       aspect-ratio: 3/4;
       border-radius: var(--radius);
       overflow: hidden;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 50%, var(--green) 100%);
+      background: linear-gradient(135deg, var(--black) 0%, var(--surface) 50%, var(--green) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -38,11 +38,11 @@
 
     .about-photo-main .photo-icon { font-size: 4rem; }
     .about-photo-main .photo-label {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.55);
       text-transform: uppercase;
       margin-top: 0.75rem;
     }
@@ -52,7 +52,7 @@
       bottom: -1.5rem;
       right: -1.5rem;
       background: var(--green);
-      color: var(--white);
+      color: var(--black);
       padding: 1.25rem 1.5rem;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -61,7 +61,7 @@
     }
 
     .about-badge .badge-number {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 2rem;
       font-weight: 800;
       line-height: 1;
@@ -81,13 +81,13 @@
     .about-text h2 { margin-bottom: 1.25rem; }
 
     .about-text p {
-      color: var(--gray);
+      color: var(--muted);
       margin-bottom: 1.1rem;
       line-height: 1.8;
       font-size: 1.02rem;
     }
 
-    .about-text p strong { color: var(--navy); font-weight: 700; }
+    .about-text p strong { color: var(--white); font-weight: 700; }
 
     .about-values {
       margin-top: 2rem;
@@ -117,13 +117,13 @@
     .about-value-text h4 {
       font-size: 0.95rem;
       margin-bottom: 0.2rem;
-      color: var(--navy);
+      color: var(--white);
     }
 
     .about-value-text p {
       font-size: 0.88rem;
       margin-bottom: 0;
-      color: var(--gray);
+      color: var(--muted);
     }
 
     /* ── Team Section ── */
@@ -135,7 +135,8 @@
     }
 
     .commitment-card {
-      background: var(--white);
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 2rem 1.5rem;
       text-align: center;
@@ -157,13 +158,14 @@
 
     .commitment-card p {
       font-size: 0.87rem;
-      color: var(--gray);
+      color: var(--muted);
       line-height: 1.6;
     }
 
     /* ── License Box ── */
     .license-box {
-      background: var(--navy);
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 2.5rem;
       display: flex;
@@ -217,10 +219,7 @@
       <div class="about-story">
 
         <div class="about-photo-stack">
-          <div class="about-photo-main">
-            <div class="photo-icon"></div>
-            <div class="photo-label">Add Team Photo Here</div>
-          </div>
+          <div class="about-photo-main" style="background-image:url('assets/photos/F9F46C57-C317-47E6-A26F-493493701300.jpg');background-size:cover;background-position:center;"></div>
           <div class="about-badge">
             <span class="badge-number">100%</span>
             <span class="badge-label">Locally Owned &amp; Operated</span>
@@ -234,7 +233,7 @@
             AquaLED, LLC started because we saw a gap in the market — too many outdoor contractors in the Austin area were taking on more work than they could handle, giving homeowners the runaround, or cutting corners to finish faster. We decided to do it differently.
           </p>
           <p>
-            We're a small, focused team based in Buda, TX. We specialize in irrigation systems, LED landscape lighting, drainage solutions, and underground utility work — and we do each of those things well. We don't spread ourselves thin trying to be everything to everyone.
+            We're a small, focused team based in Buda, TX. We specialize in irrigation systems, LED landscape lighting, hardscape, and concrete work — and we do each of those things well. We don't spread ourselves thin trying to be everything to everyone.
           </p>
           <p>
             <strong>What that means for you:</strong> when you hire AquaLED, you're working directly with the people designing and installing your system. You can ask questions, change your mind before we start, and expect straight answers about cost, timeline, and what we recommend.
@@ -355,9 +354,9 @@
     <div class="container">
       <h2>Ready to Work With a Contractor You Can Trust?</h2>
       <p>Call us directly or send a message — we'll get back to you the same day, Monday through Saturday.</p>
-      <a href="tel:+15125550192" class="cta-phone">(512) 555-0192</a>
+      <a href="tel:+15126572152" class="cta-phone">(512) 657-2152</a>
       <div class="cta-buttons">
-        <a href="tel:+15125550192" class="btn btn-primary"> Call Now</a>
+        <a href="tel:+15126572152" class="btn btn-primary"> Call Now</a>
         <a href="contact.html" class="btn btn-outline">Request Free Estimate</a>
       </div>
     </div>

@@ -27,9 +27,8 @@
     <nav id="navbar">
       <div class="container">
         <div class="nav-inner">
-          <a href="index.html" class="nav-logo">
-            <span class="logo-name">Aqua<span>LED</span>, LLC</span>
-            <span class="logo-tag">Central Texas Outdoor Contractor</span>
+          <a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
+            <img src="assets/logos/fulllogo_transparent_nobuffer.png" alt="AquaLED, LLC" style="height:48px;width:auto;" />
           </a>
           <div class="nav-links">
             ${linksHTML}
@@ -63,7 +62,7 @@
         <div class="container">
           <div class="footer-grid">
             <div class="footer-brand">
-              <div class="logo-name">Aqua<span>LED</span>, LLC</div>
+              <img src="assets/logos/fulllogo_transparent_nobuffer.png" alt="AquaLED, LLC" style="height:56px;width:auto;margin-bottom:1rem;display:block;" />
               <p>Central Texas outdoor contractor specializing in irrigation, landscape lighting, hardscape, and concrete. Fast turnaround. Direct communication. Built right.</p>
             </div>
             <div class="footer-col">
