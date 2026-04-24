@@ -218,10 +218,14 @@ section { padding: 96px 0; }
 .nav-links a:hover::after,
 .nav-links a.active::after { width: 100%; }
 
-.nav-cta {
+.nav-cta,
+.nav-links a.nav-cta {
   padding: 0.5rem 1.1rem;
   font-size: 0.8rem;
+  color: var(--black);
+  font-weight: 800;
 }
+.nav-links a.nav-cta:hover { color: var(--black); }
 
 /* Hamburger */
 .hamburger {
