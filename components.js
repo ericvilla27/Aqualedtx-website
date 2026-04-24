@@ -28,7 +28,9 @@
       <div class="container">
         <div class="nav-inner">
           <a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
-            <img src="assets/logos/fulllogo_transparent_nobuffer.png" alt="AquaLED, LLC" style="height:72px;width:auto;" />
+            <video src="assets/logos/veo-video-1777002840546.mp4" autoplay muted loop playsinline poster="assets/logos/fulllogo_transparent_nobuffer.png" aria-label="AquaLED, LLC" style="height:72px;width:auto;display:block;">
+              <img src="assets/logos/fulllogo_transparent_nobuffer.png" alt="AquaLED, LLC" style="height:72px;width:auto;" />
+            </video>
           </a>
           <div class="nav-links">
             ${linksHTML}
