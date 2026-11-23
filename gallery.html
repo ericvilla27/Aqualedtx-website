@@ -3,21 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Gallery — AquaLED, LLC | Irrigation &amp; Landscape Lighting Central Texas</title>
-  <meta name="description" content="View completed irrigation, landscape lighting, drainage, and trenching projects by AquaLED, LLC across Buda, Kyle, Austin, and San Marcos, Texas." />
+  <title>Project Gallery — AquaLED, LLC | Central Texas</title>
+  <meta name="description" content="Photos of AquaLED irrigation, LED landscape lighting, hardscape, concrete, and trenching work in Central Texas. Drainage photos are not in this set yet." />
+  <link rel="canonical" href="https://www.aqualedllc.com/gallery.html" />
+  <link rel="icon" href="favicon.ico" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AquaLED, LLC" />
+  <meta property="og:title" content="Project Gallery — AquaLED, LLC" />
+  <meta property="og:description" content="Photos of AquaLED irrigation, LED landscape lighting, hardscape, concrete, and trenching work in Central Texas." />
+  <meta property="og:url" content="https://www.aqualedllc.com/gallery.html" />
+  <meta property="og:image" content="https://www.aqualedllc.com/assets/photos/web/lighting-blue.jpg" />
+  <meta property="og:image:alt" content="Residence at night with blue LED uplights on the trees and walls" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Project Gallery — AquaLED, LLC" />
+  <meta name="twitter:description" content="Photos of AquaLED irrigation, LED landscape lighting, hardscape, concrete, and trenching work in Central Texas." />
+  <meta name="twitter:image" content="https://www.aqualedllc.com/assets/photos/web/lighting-blue.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* ── Filter Tabs ── */
     .filter-bar {
       display: flex;
       gap: 0.65rem;
       flex-wrap: wrap;
       justify-content: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
 
     .filter-btn {
@@ -30,18 +43,17 @@
       font-size: 0.82rem;
       font-weight: 700;
       cursor: pointer;
-      transition: all var(--transition);
+      transition: background var(--transition), color var(--transition), border-color var(--transition);
       letter-spacing: 0.04em;
     }
 
     .filter-btn:hover,
-    .filter-btn.active {
+    .filter-btn[aria-pressed="true"] {
       background: var(--green);
-      color: var(--white);
+      color: var(--black);
       border-color: var(--green);
     }
 
-    /* ── Gallery Grid ── */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -54,65 +66,26 @@
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .gallery-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 40px rgba(13,33,55,0.18);
     }
 
     .gallery-img {
       width: 100%;
       height: 230px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 0.5rem;
+      background: var(--black);
       position: relative;
-      overflow: hidden;
     }
 
-    /* Color variants */
-    .gi-1  { background: linear-gradient(135deg, #1a3f63 0%, #2E8B57 100%); }
-    .gi-2  { background: linear-gradient(135deg, #0d2137 0%, #b8860b 100%); }
-    .gi-3  { background: linear-gradient(135deg, #1a3f63 0%, #4a8fa5 100%); }
-    .gi-4  { background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); }
-    .gi-5  { background: linear-gradient(135deg, #1a3f63 0%, #2ecc71 100%); }
-    .gi-6  { background: linear-gradient(135deg, #0d2137 0%, #c0392b 100%); }
-    .gi-7  { background: linear-gradient(135deg, #155727 0%, #0d2137 100%); }
-    .gi-8  { background: linear-gradient(135deg, #1a3f63 0%, #8e44ad 100%); }
-    .gi-9  { background: linear-gradient(135deg, #0d2137 0%, #16a085 100%); }
-
-    .gallery-img-icon { font-size: 2.8rem; }
-    .gallery-img-label {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.5);
-      text-transform: uppercase;
-    }
-
-    .gallery-img .img-photo-badge {
+    .gallery-img picture,
+    .gallery-img img {
       position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(0,0,0,0.4);
-      color: rgba(255,255,255,0.7);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.6rem;
-      border-radius: 3px;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .gallery-body {
-      padding: 1.25rem 1.4rem 1.5rem;
-    }
+    .gallery-body { padding: 1.25rem 1.4rem 1.5rem; }
 
     .gallery-meta {
       display: flex;
@@ -134,199 +107,291 @@
       line-height: 1.6;
     }
 
-    /* ── Featured project (wide) ── */
-    .gallery-card.featured {
-      grid-column: span 2;
-    }
+    .gallery-card.featured { grid-column: span 2; }
+    .gallery-card.featured .gallery-img { height: 360px; }
 
-    .gallery-card.featured .gallery-img {
-      height: 320px;
+    .gallery-empty {
+      text-align: center;
+      color: var(--muted);
+      margin: 1rem 0 2rem;
     }
 
     @media (max-width: 700px) {
       .gallery-card.featured { grid-column: span 1; }
       .gallery-card.featured .gallery-img { height: 230px; }
     }
-
-    /* ── Location badge ── */
-    .loc-badge {
-      font-size: 0.72rem;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 600;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-    .loc-badge::before { content: ''; font-size: 0.7rem; }
   </style>
 </head>
 <body>
 
   <script src="components.js"></script>
 
-  <!-- ── PAGE HERO ── -->
   <section class="page-hero">
     <div class="container">
       <span class="section-label" style="color:rgba(255,255,255,0.55);">Our Work</span>
       <h1>Project Gallery</h1>
-      <p>Real installs. Real results. Every project below was completed by our crew across Central Texas.</p>
+      <p>Photos from jobs in this set.</p>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════
-       GALLERY SECTION
-  ══════════════════════════════════════════════ -->
   <section>
     <div class="container">
 
-      <!-- Filter Bar -->
-      <div class="filter-bar">
-        <button class="filter-btn active">All Projects</button>
-        <button class="filter-btn">Irrigation</button>
-        <button class="filter-btn">Landscape Lighting</button>
-        <button class="filter-btn">Drainage</button>
-        <button class="filter-btn">Commercial</button>
+      <div class="filter-bar" role="toolbar" aria-label="Filter photos by service">
+        <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter-btn" data-filter="irrigation" aria-pressed="false">Irrigation</button>
+        <button type="button" class="filter-btn" data-filter="lighting" aria-pressed="false">Landscape Lighting</button>
+        <button type="button" class="filter-btn" data-filter="hardscape" aria-pressed="false">Hardscape</button>
+        <button type="button" class="filter-btn" data-filter="concrete" aria-pressed="false">Concrete</button>
+        <button type="button" class="filter-btn" data-filter="drainage" aria-pressed="false">Drainage</button>
+        <button type="button" class="filter-btn" data-filter="trenching" aria-pressed="false">Trenching</button>
+      </div>
+      <p id="gallery-status" class="visually-hidden" aria-live="polite"></p>
+      <p id="gallery-empty" class="gallery-empty" hidden>No photos in this category yet.</p>
+
+      <div class="gallery-grid" id="gallery-grid">
+
+        <article class="gallery-card featured" data-category="lighting">
+          <div class="gallery-img">
+            <picture>
+              <source srcset="assets/photos/web/lighting-blue.webp" type="image/webp" />
+              <img src="assets/photos/web/lighting-blue.jpg" width="1920" height="1440" alt="Residence at night with blue LED uplights on the trees and walls and path lights along the drive" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta"><span class="project-tag">Landscape Lighting</span></div>
+            <h3>45-fixture dim-and-color lighting</h3>
+            <p>Residential dim-and-color install. Blue LED uplights on the trees and walls, and path lights along the drive.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="lighting">
+          <div class="gallery-img">
+            <picture>
+              <source srcset="assets/photos/web/path-lights.webp" type="image/webp" />
+              <img src="assets/photos/web/path-lights.jpg" width="1050" height="1400" alt="Path lights along a stone walk at night, with a red markup circle on one fixture" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta"><span class="project-tag">Landscape Lighting</span></div>
+            <h3>Path lights on a stone walk</h3>
+            <p>Low path lights beside concrete stepping pads, and a wall lantern under a covered entry. The source file is a phone screenshot and still has a red markup circle on one fixture.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card featured" data-category="trenching">
+          <div class="gallery-img">
+            <picture>
+              <source srcset="assets/photos/web/bowie-trench.webp" type="image/webp" />
+              <img src="assets/photos/web/bowie-trench.jpg" width="564" height="564" alt="Shoring and gravel bedding in the Bowie High School utility trench" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta"><span class="project-tag">Trenching</span></div>
+            <h3>Bowie High School excavation</h3>
+            <p>About 1,500 linear feet excavated for new chiller and return lines. Shoring, gravel bedding, and a marked line in the trench.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="trenching">
+          <div class="gallery-img">
+            <picture>
+              <source srcset="assets/photos/web/trench-shoring.webp" type="image/webp" />
+              <img src="assets/photos/web/trench-shoring.jpg" width="799" height="799" alt="Metal trench shoring and gravel bedding beside a concrete curb" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta"><span class="project-tag">Trenching</span></div>
+            <h3>Shored utility trench</h3>
+            <p>Metal shoring, gravel bedding, and a marked line beside a concrete curb.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="trenching">
+          <div class="gallery-img">
+            <picture>
+              <source srcset="assets/photos/web/trench-wide.webp" type="image/webp" />
+              <img src="assets/photos/web/trench-wide.jpg" width="799" height="799" alt="Long shored trench with spoil piled beside it and a building in the background" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta"><span class="project-tag">Trenching</span></div>
+            <h3>Long utility trench</h3>
+            <p>The cut continues past the shoring, with spoil piled along the side and a building in the background.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="trenching">
+          <div class="gallery-img">
+            <picture>
+              <source srcset="assets/photos/web/trench-pipe.webp" type="image/webp" />
+              <img src="assets/photos/web/trench-pipe.jpg" width="799" height="799" alt="White pipe bedded in sand in an open trench, with a tracked excavator above the cut" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta"><span class="project-tag">Trenching</span></div>
+            <h3>Pipe in an open trench</h3>
+            <p>A white pipe bedded in sand, with a tracked excavator at the top of the cut.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="trenching">
+          <div class="gallery-img">
+            <picture>
+              <source srcset="assets/photos/web/trench-pipe-close.webp" type="image/webp" />
+              <img src="assets/photos/web/trench-pipe-close.jpg" width="799" height="799" alt="Closer view of pipe bedded in a trench, with a black line in the foreground" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta"><span class="project-tag">Trenching</span></div>
+            <h3>Pipe bedding, closer view</h3>
+            <p>A tighter view of bedded pipe, with a black line entering the trench in the foreground.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="trenching">
+          <div class="gallery-img">
+            <picture>
+              <source srcset="assets/photos/web/trench-fence.webp" type="image/webp" />
+              <img src="assets/photos/web/trench-fence.jpg" width="1400" height="1400" alt="Worker in a narrow trench beside a chain-link fence" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta"><span class="project-tag">Trenching</span></div>
+            <h3>Narrow trench at a fence line</h3>
+            <p>A worker in a narrow trench beside a chain-link fence, with conduit at the edge of the cut.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="trenching">
+          <div class="gallery-img">
+            <picture>
+              <source srcset="assets/photos/web/slab-cut.webp" type="image/webp" />
+              <img src="assets/photos/web/slab-cut.jpg" width="1050" height="1400" alt="Excavator bucket opening a cut through a concrete slab" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta"><span class="project-tag">Trenching</span></div>
+            <h3>Cut through a concrete slab</h3>
+            <p>An excavator opening a trench through an existing slab.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="irrigation">
+          <div class="gallery-img">
+            <picture>
+              <source srcset="assets/photos/web/valve-manifold.webp" type="image/webp" />
+              <img src="assets/photos/web/valve-manifold.jpg" width="787" height="1400" alt="Hands wiring a PVC irrigation manifold and valve solenoids in an open trench" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta"><span class="project-tag">Irrigation</span></div>
+            <h3>Irrigation valve manifold</h3>
+            <p>PVC manifold and valve solenoids in an open trench, with the low-voltage wires being landed. Cropped from a phone screenshot.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="irrigation">
+          <div class="gallery-img">
+            <picture>
+              <source srcset="assets/photos/web/irrigation-pump.webp" type="image/webp" />
+              <img src="assets/photos/web/irrigation-pump.jpg" width="1050" height="1400" alt="Irrigation pump on a concrete pad piped to a valve box beside a storage tank" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta"><span class="project-tag">Irrigation</span></div>
+            <h3>Irrigation pump and valve box</h3>
+            <p>A pump on a concrete pad, piped to a valve box beside a storage tank.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="irrigation">
+          <div class="gallery-img">
+            <picture>
+              <source srcset="assets/photos/web/irrigation-pump-wide.webp" type="image/webp" />
+              <img src="assets/photos/web/irrigation-pump-wide.jpg" width="1400" height="1050" alt="Wider view of the pump pad, valve boxes, and storage tank in a grassy clearing" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta"><span class="project-tag">Irrigation</span></div>
+            <h3>Pump pad in a clearing</h3>
+            <p>Wider view of the same pump, valve boxes, and storage tank.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="hardscape">
+          <div class="gallery-img">
+            <picture>
+              <source srcset="assets/photos/web/cedar-fence.webp" type="image/webp" />
+              <img src="assets/photos/web/cedar-fence.jpg" width="1400" height="1051" alt="New horizontal cedar fence on black posts with a mulched bed in front" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta"><span class="project-tag">Hardscape</span></div>
+            <h3>Cedar fence</h3>
+            <p>Horizontal cedar boards on black posts, with a mulched bed in front. Orange marks are drawn on the bed in the photo.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="hardscape">
+          <div class="gallery-img">
+            <picture>
+              <source srcset="assets/photos/web/brick-entry.webp" type="image/webp" />
+              <img src="assets/photos/web/brick-entry.jpg" width="1400" height="1052" alt="Brick monument wall, planter, and concrete walk at a commercial entry" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta"><span class="project-tag">Hardscape</span></div>
+            <h3>Commercial entry wall</h3>
+            <p>Brick monument wall, a steel planter, and a concrete walk. The sign on the wall belongs to the building.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="concrete">
+          <div class="gallery-img">
+            <picture>
+              <source srcset="assets/photos/web/concrete-pads.webp" type="image/webp" />
+              <img src="assets/photos/web/concrete-pads.jpg" width="640" height="480" alt="Square concrete pads poured in forms around a tree" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta"><span class="project-tag">Concrete</span></div>
+            <h3>Poured pads around a tree</h3>
+            <p>Square concrete pads still in their forms, set around a tree. These are poured pads, not pavers.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-category="concrete">
+          <div class="gallery-img">
+            <picture>
+              <source srcset="assets/photos/web/concrete-finish.webp" type="image/webp" />
+              <img src="assets/photos/web/concrete-finish.jpg" width="480" height="640" alt="Worker finishing the surface of poured concrete pads" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-meta"><span class="project-tag">Concrete</span></div>
+            <h3>Finishing concrete pads</h3>
+            <p>The same pour, with the surface being finished by hand.</p>
+          </div>
+        </article>
+
       </div>
 
-      <!-- Gallery Grid -->
-      <div class="gallery-grid">
-
-        <!-- Featured -->
-        <div class="gallery-card featured">
-          <div class="gallery-img" style="background:linear-gradient(135deg,var(--surface) 0%,var(--charcoal) 100%);color:var(--muted);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;">Photo Coming Soon<div class="img-photo-badge">Featured Project</div></div>
-          <div class="gallery-body">
-            <div class="gallery-meta">
-              <span class="project-tag">Irrigation</span>
-              <span class="loc-badge">Buda, TX</span>
-            </div>
-            <h3>14-Zone Residential Irrigation System — New Construction</h3>
-            <p>Complete design and installation of a 14-zone drip and spray irrigation system for a 1-acre residential property. Custom zone layout covers turf, shrub beds, and a vegetable garden. Paired with a Rachio 3 smart controller for remote scheduling and water usage tracking. Project completed in 2 days with full restoration of disrupted lawn areas.</p>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="gallery-card">
-          <div class="gallery-img" style="background:linear-gradient(135deg,var(--surface) 0%,var(--charcoal) 100%);color:var(--muted);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;">Photo Coming Soon</div>
-          <div class="gallery-body">
-            <div class="gallery-meta">
-              <span class="project-tag">Lighting</span>
-              <span class="loc-badge">Austin, TX</span>
-            </div>
-            <h3>Full Property LED Lighting — Residential</h3>
-            <p>Uplights on 6 mature oak trees, path lights along a 120-ft driveway, and deck accent lighting. All wire buried 6 inches, fixtures staked and leveled. Transformer with timer installed in garage.</p>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="gallery-card">
-          <div class="gallery-img" style="background:linear-gradient(135deg,var(--surface) 0%,var(--charcoal) 100%);color:var(--muted);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;">Photo Coming Soon</div>
-          <div class="gallery-body">
-            <div class="gallery-meta">
-              <span class="project-tag">Drainage</span>
-              <span class="loc-badge">Kyle, TX</span>
-            </div>
-            <h3>French Drain — Foundation Flooding Fix</h3>
-            <p>Installed 65 feet of French drain along the back of a home's foundation to redirect water that had been pooling for years. Combined with downspout extensions to tie into the drain at two points.</p>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="gallery-card">
-          <div class="gallery-img" style="background:linear-gradient(135deg,var(--surface) 0%,var(--charcoal) 100%);color:var(--muted);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;">Photo Coming Soon</div>
-          <div class="gallery-body">
-            <div class="gallery-meta">
-              <span class="project-tag">Commercial</span>
-              <span class="loc-badge">San Marcos, TX</span>
-            </div>
-            <h3>Commercial Irrigation — 4-Acre Property</h3>
-            <p>Large commercial irrigation project for a mixed-use property. 22 zones covering turf, planting beds, and trees. Hunter commercial heads with a central controller and flow sensor.</p>
-          </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="gallery-card">
-          <div class="gallery-img" style="background:linear-gradient(135deg,var(--surface) 0%,var(--charcoal) 100%);color:var(--muted);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;">Photo Coming Soon</div>
-          <div class="gallery-body">
-            <div class="gallery-meta">
-              <span class="project-tag">Trenching</span>
-              <span class="loc-badge">Buda, TX</span>
-            </div>
-            <h3>Underground Conduit Run — Detached Shop</h3>
-            <p>Trenched 140 feet of conduit from main panel to a detached shop and outbuilding. Minimal disruption to existing landscaping — sod replaced and compacted on completion.</p>
-          </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="gallery-card">
-          <div class="gallery-img" style="background:linear-gradient(135deg,var(--surface) 0%,var(--charcoal) 100%);color:var(--muted);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;">Photo Coming Soon</div>
-          <div class="gallery-body">
-            <div class="gallery-meta">
-              <span class="project-tag">Irrigation</span>
-              <span class="loc-badge">Wimberley, TX</span>
-            </div>
-            <h3>Drip Irrigation — Hill Country Property</h3>
-            <p>Custom drip system installed for a 3/4-acre property with a mix of native plants, raised beds, and orchard trees. Designed for low water use in rocky Hill Country soil.</p>
-          </div>
-        </div>
-
-        <!-- Card 7 -->
-        <div class="gallery-card">
-          <div class="gallery-img" style="background:linear-gradient(135deg,var(--surface) 0%,var(--charcoal) 100%);color:var(--muted);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;">Photo Coming Soon</div>
-          <div class="gallery-body">
-            <div class="gallery-meta">
-              <span class="project-tag">Lighting</span>
-              <span class="loc-badge">Cedar Park, TX</span>
-            </div>
-            <h3>Outdoor Lighting — Patio &amp; Pool Area</h3>
-            <p>Installed landscape uplights, step lights, and pool-perimeter accent lighting for a newly finished backyard renovation. Smart control via phone app with color temperature adjustment.</p>
-          </div>
-        </div>
-
-        <!-- Card 8 -->
-        <div class="gallery-card">
-          <div class="gallery-img" style="background:linear-gradient(135deg,var(--surface) 0%,var(--charcoal) 100%);color:var(--muted);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;">Photo Coming Soon</div>
-          <div class="gallery-body">
-            <div class="gallery-meta">
-              <span class="project-tag">Drainage</span>
-              <span class="loc-badge">Lockhart, TX</span>
-            </div>
-            <h3>Surface Channel Drain — Commercial Parking</h3>
-            <p>Installed a linear channel drain system across a commercial parking area to prevent water from migrating toward a retail entrance. Tied into existing storm system.</p>
-          </div>
-        </div>
-
-        <!-- Card 9 -->
-        <div class="gallery-card">
-          <div class="gallery-img" style="background:linear-gradient(135deg,var(--surface) 0%,var(--charcoal) 100%);color:var(--muted);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;">Photo Coming Soon</div>
-          <div class="gallery-body">
-            <div class="gallery-meta">
-              <span class="project-tag">Irrigation</span>
-              <span class="loc-badge">Pflugerville, TX</span>
-            </div>
-            <h3>Irrigation Repair &amp; Upgrade — Existing System</h3>
-            <p>Diagnosed and repaired a 10-year-old irrigation system with broken zones, cracked mainline, and an outdated controller. Upgraded heads and controller, system now runs at full efficiency.</p>
-          </div>
-        </div>
-
-      </div><!-- /gallery-grid -->
-
       <div class="text-center mt-2">
-        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1rem;">More photos being added as jobs are completed. Want to see a specific service type?</p>
-        <a href="contact.html" class="btn btn-primary">Contact Us for More Info →</a>
+        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1rem;">Named work with no photo in this set: Martin Middle School fields irrigation, and two softball-field irrigation systems at Dripping Springs Sports Complex. No drainage photo is in the set.</p>
+        <a href="contact.html" class="btn btn-primary">Request a Free Estimate</a>
       </div>
 
     </div>
   </section>
 
-  <!-- ── CTA ── -->
   <section class="cta-banner">
     <div class="container">
       <h2>Like What You See?</h2>
-      <p>Let's talk about your project. We'll give you an honest assessment and a fair estimate — no upselling.</p>
+      <p>Call or text, or send the form. Estimates are free. The visit is how we price the job.</p>
       <a href="tel:+15126572152" class="cta-phone">(512) 657-2152</a>
       <div class="cta-buttons">
-        <a href="tel:+15126572152" class="btn btn-primary"> Call Now</a>
+        <a href="tel:+15126572152" class="btn btn-primary">Call Now</a>
         <a href="contact.html" class="btn btn-outline">Request Free Estimate</a>
       </div>
     </div>
@@ -335,13 +400,37 @@
   <div id="footer-placeholder"></div>
 
   <script>
-    // Simple client-side filter
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', function () {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
+    (function () {
+      var buttons = Array.prototype.slice.call(document.querySelectorAll('.filter-btn'));
+      var cards = Array.prototype.slice.call(document.querySelectorAll('.gallery-card'));
+      var empty = document.getElementById('gallery-empty');
+      var status = document.getElementById('gallery-status');
+
+      function apply(filter) {
+        var shown = 0;
+        buttons.forEach(function (btn) {
+          var on = btn.getAttribute('data-filter') === filter;
+          btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        cards.forEach(function (card) {
+          var match = filter === 'all' || card.getAttribute('data-category') === filter;
+          card.hidden = !match;
+          if (match) shown += 1;
+        });
+        empty.hidden = shown !== 0;
+        status.textContent = shown === 0
+          ? 'No photos in this category.'
+          : 'Showing ' + shown + (shown === 1 ? ' photo.' : ' photos.');
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          apply(btn.getAttribute('data-filter'));
+        });
       });
-    });
+
+      apply('all');
+    })();
   </script>
 
 </body>

@@ -3,8 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About AquaLED, LLC — Local Irrigation &amp; Outdoor Contractor | Buda, TX</title>
-  <meta name="description" content="Learn about AquaLED, LLC — a locally owned outdoor contractor based in Buda, Texas, serving Central Texas with irrigation, landscape lighting, and drainage services." />
+  <title>About AquaLED, LLC — Outdoor Contractor in Buda, TX</title>
+  <meta name="description" content="AquaLED, LLC is a locally owned Buda contractor for irrigation, LED landscape lighting, hardscape, concrete, drainage, and trenching across Central Texas." />
+  <link rel="canonical" href="https://www.aqualedllc.com/about.html" />
+  <link rel="icon" href="favicon.ico" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AquaLED, LLC" />
+  <meta property="og:title" content="About AquaLED, LLC" />
+  <meta property="og:description" content="A locally owned Buda contractor for irrigation, LED landscape lighting, hardscape, concrete, drainage, and trenching." />
+  <meta property="og:url" content="https://www.aqualedllc.com/about.html" />
+  <meta property="og:image" content="https://www.aqualedllc.com/assets/photos/web/lighting-blue.jpg" />
+  <meta property="og:image:alt" content="Residence at night with blue LED uplights on the trees and walls" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About AquaLED, LLC" />
+  <meta name="twitter:description" content="A locally owned Buda contractor for irrigation, LED landscape lighting, hardscape, concrete, drainage, and trenching." />
+  <meta name="twitter:image" content="https://www.aqualedllc.com/assets/photos/web/lighting-blue.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
@@ -28,12 +42,17 @@
       aspect-ratio: 3/4;
       border-radius: var(--radius);
       overflow: hidden;
-      background: linear-gradient(135deg, var(--black) 0%, var(--surface) 50%, var(--green) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+      position: relative;
+      background: var(--black);
       box-shadow: 0 16px 56px rgba(13,33,55,0.25);
+    }
+
+    .about-photo-main img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .about-photo-main .photo-icon { font-size: 4rem; }
@@ -221,7 +240,9 @@
       <div class="about-story">
 
         <div class="about-photo-stack">
-          <div class="about-photo-main" style="background-image:url('assets/photos/F9F46C57-C317-47E6-A26F-493493701300.jpg');background-size:cover;background-position:center;"></div>
+          <div class="about-photo-main">
+            <img src="assets/photos/web/lighting-blue.jpg" width="1920" height="1440" alt="Residence at night with blue LED uplights on the trees and walls" decoding="async" />
+          </div>
           <div class="about-badge">
             <span class="badge-number">100%</span>
             <span class="badge-label">Locally Owned &amp; Operated</span>
@@ -235,7 +256,7 @@
             AquaLED, LLC started because we saw a gap in the market — too many outdoor contractors in the Austin area were taking on more work than they could handle, giving homeowners the runaround, or cutting corners to finish faster. We decided to do it differently.
           </p>
           <p>
-            We're a small, focused team based in Buda, TX. We specialize in irrigation systems, LED landscape lighting, hardscape, and concrete work — and we do each of those things well. We don't spread ourselves thin trying to be everything to everyone.
+            We're a small crew based in Buda, TX. The work is irrigation, LED landscape lighting, hardscape, concrete and flatwork, drainage, and trenching.
           </p>
           <p>
             <strong>What that means for you:</strong> when you hire AquaLED, you're working directly with the people designing and installing your system. You can ask questions, change your mind before we start, and expect straight answers about cost, timeline, and what we recommend.
@@ -249,7 +270,7 @@
               <div class="about-value-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
               <div class="about-value-text">
                 <h4>We Actually Answer</h4>
-                <p>You'll talk to us directly — not a call center. We return calls and messages the same day.</p>
+                <p>You'll talk to us directly. Call or text (512) 657-2152, or email info@aqualedllc.com.</p>
               </div>
             </div>
             <div class="about-value">
@@ -281,7 +302,7 @@
         <div class="license-text" style="flex:1;min-width:260px;">
           <h3>Licensed, Insured, and Operating by the Book</h3>
           <p>
-            AquaLED, LLC is fully licensed in the state of Texas and carries general liability insurance on every job. We call 811 before every dig, we pull permits when required, and we don't cut corners that could create problems for you down the road. Your property is protected — and so is our reputation.
+            AquaLED, LLC holds Texas Licensed Irrigator LI #22379 and carries $2,000,000 in general liability. We call 811 before we dig. Proof of insurance is available before a job starts.
           </p>
         </div>
       </div>
@@ -359,7 +380,7 @@
   <section class="cta-banner">
     <div class="container">
       <h2>Ready to Work With a Contractor You Can Trust?</h2>
-      <p>Call us directly or send a message — we'll get back to you the same day, Monday through Saturday.</p>
+      <p>Call, text, or send a message. Text and email are the best way to reach us.</p>
       <a href="tel:+15126572152" class="cta-phone">(512) 657-2152</a>
       <div class="cta-buttons">
         <a href="tel:+15126572152" class="btn btn-primary"> Call Now</a>

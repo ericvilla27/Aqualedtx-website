@@ -27,8 +27,8 @@
     <nav id="navbar">
       <div class="container">
         <div class="nav-inner">
-          <a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
-            <img src="assets/logos/fulllogo_transparent_nobuffer.png" alt="AquaLED, LLC" style="height:72px;width:auto;display:block;" />
+          <a href="index.html" class="nav-logo">
+            <img class="logo-img" src="assets/logos/fulllogo_white.svg" alt="AquaLED, LLC" width="980" height="540" />
           </a>
           <div class="nav-links">
             ${linksHTML}
@@ -49,6 +49,19 @@
   document.getElementById('hamburger').addEventListener('click', function () {
     document.getElementById('mobileNav').classList.toggle('open');
   });
+
+  document.body.insertAdjacentHTML('beforeend', `
+    <nav class="mobile-cta-bar" aria-label="Call or text AquaLED">
+      <a class="cta-call" href="tel:+15126572152">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call
+      </a>
+      <a class="cta-text" href="sms:+15126572152">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Text
+      </a>
+    </nav>
+  `);
 })();
 
 /* ---------- FOOTER ---------- */
@@ -62,8 +75,8 @@
         <div class="container">
           <div class="footer-grid">
             <div class="footer-brand">
-              <img src="assets/logos/fulllogo_transparent_nobuffer.png" alt="AquaLED, LLC" style="height:96px;width:auto;margin-bottom:1rem;display:block;" />
-              <p>Central Texas outdoor contractor specializing in irrigation, landscape lighting, hardscape, and concrete. Fast turnaround. Direct communication. Built right.</p>
+              <img class="logo-img" src="assets/logos/fulllogo_white.svg" alt="AquaLED, LLC" width="980" height="540" />
+              <p>Central Texas outdoor contractor for irrigation, LED landscape lighting, hardscape, concrete and flatwork, drainage, and trenching. You talk to the person running the job.</p>
             </div>
             <div class="footer-col">
               <h4>Quick Links</h4>
@@ -87,16 +100,12 @@
               </div>
               <div class="footer-contact-item">
                 <span class="ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-                <span>Buda, TX — Serving Central Texas</span>
-              </div>
-              <div class="footer-contact-item">
-                <span class="ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-                <span>Mon–Fri 7am–6pm · Sat 8am–2pm</span>
+                <span>Buda, TX. Serving Central Texas</span>
               </div>
             </div>
           </div>
           <div class="footer-bottom">
-            <span>© 2025 AquaLED, LLC. All rights reserved.</span>
+            <span>© ${new Date().getFullYear()} AquaLED, LLC. All rights reserved.</span>
             <span>Serving Buda · Kyle · Austin · San Marcos · Lockhart · Central Texas</span>
           </div>
         </div>

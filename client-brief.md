@@ -22,9 +22,13 @@ All of Central Texas
 
 **Services (priority order):**
 1. Irrigation
-2. Landscape Lighting
+2. Landscape Lighting (LED)
 3. Hardscape
-4. Concrete work (flat work to foundations)
+4. Concrete / Flatwork
+5. Drainage
+6. Trenching & Underground Utilities
+
+The intake form named the first four. Drainage and trenching were already on the services page. The offered set is these six.
 
 **What makes them different:**
 Small business — you speak directly to the person in charge of the job. Transparency, willing to listen and take care of customer needs instead of trying to upsell everything.
@@ -109,9 +113,10 @@ Anywhere from irrigation/landscape adjustments to full installs on landscaping, 
 
 | Item | Status |
 |---|---|
-| Logo file | Pending |
-| Brand colors / guidelines | Pending |
-| 2–3 website examples client likes | Done — novo, schmitt, corfu |
-| Photos from projects | Pending |
-| Drawings / plans / renderings | Pending |
-| Google/Yelp reviews (3–5) | Pending — client will gather |
+| Logo file | In `assets/logos/`. No white or reverse lockup. The dark header uses the navy logo on a light chip. |
+| Brand colors / guidelines | Site uses charcoal backgrounds and green `#2eb86a`. A separate guidelines file was not provided. |
+| 2–3 website examples client likes | Done. Novo, Schmitt, Corfu. |
+| Photos from projects | In `assets/photos/web/` (compressed). Irrigation, lighting, hardscape, concrete, and trenching have photos. Drainage does not. Martin Middle School and Dripping Springs Sports Complex are named below and do not have a photo that shows those sites. |
+| Drawings / plans / renderings | Still not in the repo. |
+| Google/Yelp reviews (3–5) | Still none. Client was going to gather them. |
+| Formspree form id | Not created yet. The contact form action is `https://formspree.io/f/YOUR_FORM_ID` until the owner pastes a real id. |
