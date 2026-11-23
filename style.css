@@ -167,6 +167,38 @@ section { padding: 96px 0; }
   line-height: 1.1;
 }
 
+/* Navy logo on a light chip so the wordmark stays readable on the dark header and footer. */
+.logo-img {
+  display: block;
+  height: 72px;
+  width: auto;
+  background: #edf2ee;
+  border-radius: 4px;
+  padding: 3px 8px;
+}
+
+.footer-brand .logo-img {
+  height: 88px;
+  margin-bottom: 1rem;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+
 .nav-logo .logo-name {
   font-family: 'DM Sans', 'Montserrat', sans-serif;
   font-weight: 800;

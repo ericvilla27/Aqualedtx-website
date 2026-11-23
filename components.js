@@ -27,8 +27,8 @@
     <nav id="navbar">
       <div class="container">
         <div class="nav-inner">
-          <a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
-            <img src="assets/logos/fulllogo_transparent_nobuffer.png" alt="AquaLED, LLC" style="height:72px;width:auto;display:block;" />
+          <a href="index.html" class="nav-logo">
+            <img class="logo-img" src="assets/logos/fulllogo_transparent_nobuffer.png" alt="AquaLED, LLC" width="1280" height="690" />
           </a>
           <div class="nav-links">
             ${linksHTML}
@@ -62,8 +62,8 @@
         <div class="container">
           <div class="footer-grid">
             <div class="footer-brand">
-              <img src="assets/logos/fulllogo_transparent_nobuffer.png" alt="AquaLED, LLC" style="height:96px;width:auto;margin-bottom:1rem;display:block;" />
-              <p>Central Texas outdoor contractor specializing in irrigation, landscape lighting, hardscape, and concrete. Fast turnaround. Direct communication. Built right.</p>
+              <img class="logo-img" src="assets/logos/fulllogo_transparent_nobuffer.png" alt="AquaLED, LLC" width="1280" height="690" />
+              <p>Central Texas outdoor contractor for irrigation, LED landscape lighting, hardscape, concrete and flatwork, drainage, and trenching. You talk to the person running the job.</p>
             </div>
             <div class="footer-col">
               <h4>Quick Links</h4>
@@ -87,16 +87,12 @@
               </div>
               <div class="footer-contact-item">
                 <span class="ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-                <span>Buda, TX — Serving Central Texas</span>
-              </div>
-              <div class="footer-contact-item">
-                <span class="ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-                <span>Mon–Fri 7am–6pm · Sat 8am–2pm</span>
+                <span>Buda, TX. Serving Central Texas</span>
               </div>
             </div>
           </div>
           <div class="footer-bottom">
-            <span>© 2025 AquaLED, LLC. All rights reserved.</span>
+            <span>© ${new Date().getFullYear()} AquaLED, LLC. All rights reserved.</span>
             <span>Serving Buda · Kyle · Austin · San Marcos · Lockhart · Central Texas</span>
           </div>
         </div>

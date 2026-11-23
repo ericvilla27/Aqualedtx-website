@@ -3,8 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact AquaLED, LLC — Free Estimates | Buda, TX Outdoor Contractor</title>
-  <meta name="description" content="Contact AquaLED, LLC for free estimates on irrigation installation, landscape lighting, and drainage in Buda, Kyle, Austin, and San Marcos, TX. Call (512) 657-2152." />
+  <title>Contact AquaLED, LLC — Free Estimates | Buda, TX</title>
+  <meta name="description" content="Request a free AquaLED estimate for irrigation, LED landscape lighting, hardscape, concrete, drainage, or trenching. Call or text (512) 657-2152, or email info@aqualedllc.com." />
+  <link rel="canonical" href="https://www.aqualedtx.com/contact.html" />
+  <link rel="icon" href="favicon.ico" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AquaLED, LLC" />
+  <meta property="og:title" content="Contact AquaLED, LLC" />
+  <meta property="og:description" content="Free estimates. Call or text (512) 657-2152, or email info@aqualedllc.com." />
+  <meta property="og:url" content="https://www.aqualedtx.com/contact.html" />
+  <meta property="og:image" content="https://www.aqualedtx.com/assets/photos/web/lighting-blue.jpg" />
+  <meta property="og:image:alt" content="Residence at night with blue LED uplights on the trees and walls" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact AquaLED, LLC" />
+  <meta name="twitter:description" content="Free estimates. Call or text (512) 657-2152, or email info@aqualedllc.com." />
+  <meta name="twitter:image" content="https://www.aqualedtx.com/assets/photos/web/lighting-blue.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
@@ -84,24 +98,6 @@
       margin-top: 0.1rem;
     }
 
-    .hours-list {
-      margin-top: 1rem;
-    }
-
-    .hours-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.4rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-
-    .hours-row:last-child { border-bottom: none; }
-    .hours-row .day { color: var(--muted); }
-    .hours-row .time { font-weight: 700; color: var(--white); }
-    .hours-row .closed { font-weight: 700; color: #c0392b; }
-
     /* ── Form card ── */
     .form-card {
       background: var(--surface);
@@ -137,9 +133,19 @@
     }
     .form-submit-note strong { color: var(--green); }
 
+    .hp-field {
+      position: absolute;
+      left: -10000px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
     /* ── Success message (hidden by default) ── */
+    .form-success[hidden],
+    .form-fallback[hidden] { display: none !important; }
+
     .form-success {
-      display: none;
       background: rgba(46,139,87,0.08);
       border: 1.5px solid var(--green);
       border-radius: var(--radius);
@@ -157,6 +163,7 @@
       font-size: 0.9rem;
       color: var(--muted);
     }
+    .form-success a { color: var(--green); font-weight: 700; }
 
     /* ── FAQ section ── */
     .faq-list {
@@ -175,6 +182,7 @@
     }
 
     .faq-q {
+      width: 100%;
       padding: 1.1rem 1.4rem;
       display: flex;
       justify-content: space-between;
@@ -185,8 +193,21 @@
       font-size: 0.95rem;
       color: var(--white);
       gap: 1rem;
-      user-select: none;
+      text-align: left;
+      background: none;
+      border: 0;
     }
+
+    .form-fallback {
+      background: var(--surface-2);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.4rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-fallback p { color: var(--muted); font-size: 0.92rem; margin: 0; }
+    .form-fallback a { color: var(--green); font-weight: 700; }
 
     .faq-q .faq-arrow {
       color: var(--green);
@@ -224,7 +245,7 @@
     <div class="container">
       <span class="section-label" style="color:rgba(255,255,255,0.55);">Get In Touch</span>
       <h1>Request a Free Estimate</h1>
-      <p>We strive to respond same-day, Monday through Saturday. No pressure, no commitment — just a straight conversation about your project.</p>
+      <p>Text and email are the best way to reach us. Estimates are free.</p>
     </div>
   </section>
 
@@ -240,7 +261,7 @@
           <span class="section-label">Reach Out</span>
           <h2>We're Ready When You Are</h2>
           <p>
-            The fastest way to get an estimate is to call us directly. If you'd prefer to fill out the form, we'll get back to you within one business day — usually the same day.
+            Call or text if you want the fastest reply. The form works too. Estimates are free, and nothing is owed for the visit.
           </p>
 
           <a href="tel:+15126572152" class="contact-card" style="text-decoration:none;">
@@ -277,44 +298,45 @@
             <h3>Request Your Free Estimate</h3>
             <p class="form-intro">Tell us about your project and we'll follow up to schedule a site visit. We'll share a written estimate after the site visit.</p>
 
-            <form id="contactForm" novalidate>
+            <!-- FORMSPREE: replace YOUR_FORM_ID in this action. It is the only place the form id lives. -->
+            <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+              <div class="hp-field" aria-hidden="true">
+                <label for="gotcha">Leave this field blank</label>
+                <input type="text" id="gotcha" name="_gotcha" tabindex="-1" autocomplete="off" />
+              </div>
+              <input type="hidden" name="_subject" value="AquaLED estimate request" />
               <div class="form-grid">
                 <div class="form-group">
-                  <label for="fname">First Name *</label>
-                  <input type="text" id="fname" name="fname" placeholder="John" required />
+                  <label for="name">Name *</label>
+                  <input type="text" id="name" name="name" autocomplete="name" required />
                 </div>
                 <div class="form-group">
-                  <label for="lname">Last Name *</label>
-                  <input type="text" id="lname" name="lname" placeholder="Smith" required />
-                </div>
-                <div class="form-group">
-                  <label for="phone">Phone Number *</label>
-                  <input type="tel" id="phone" name="phone" placeholder="(512) 555-0000" required />
-                </div>
-                <div class="form-group">
-                  <label for="email">Email Address</label>
-                  <input type="email" id="email" name="email" placeholder="john@email.com" />
+                  <label for="phone">Phone *</label>
+                  <input type="tel" id="phone" name="phone" autocomplete="tel" required />
                 </div>
                 <div class="form-group full">
-                  <label for="city">City / Location *</label>
-                  <input type="text" id="city" name="city" placeholder="Buda, TX" required />
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" autocomplete="email" />
                 </div>
                 <div class="form-group full">
-                  <label for="service">Service Needed *</label>
-                  <select id="service" name="service" required>
-                    <option value="">— Select a Service —</option>
-                    <option value="irrigation-install">Irrigation Installation</option>
-                    <option value="irrigation-repair">Irrigation Repair</option>
-                    <option value="lighting">Landscape Lighting</option>
-                    <option value="drainage">Drainage Solutions</option>
-                    <option value="trenching">Trenching / Underground Utilities</option>
-                    <option value="multiple">Multiple Services</option>
-                    <option value="unsure">Not Sure — Need Advice</option>
+                  <label for="address">Address *</label>
+                  <input type="text" id="address" name="address" autocomplete="street-address" required />
+                </div>
+                <div class="form-group full">
+                  <label for="service">Service</label>
+                  <select id="service" name="service">
+                    <option value="">Select a service (optional)</option>
+                    <option value="Irrigation">Irrigation</option>
+                    <option value="Landscape Lighting (LED)">Landscape Lighting (LED)</option>
+                    <option value="Hardscape">Hardscape</option>
+                    <option value="Concrete / Flatwork">Concrete / Flatwork</option>
+                    <option value="Drainage">Drainage</option>
+                    <option value="Trenching &amp; Underground Utilities">Trenching &amp; Underground Utilities</option>
                   </select>
                 </div>
                 <div class="form-group full">
-                  <label for="message">Project Details</label>
-                  <textarea id="message" name="message" placeholder="Tell us about your property and what you're looking to have done. The more detail, the better we can prepare for our visit."></textarea>
+                  <label for="message">Project description *</label>
+                  <textarea id="message" name="message" required></textarea>
                 </div>
               </div>
 
@@ -323,14 +345,17 @@
                   Send Estimate Request →
                 </button>
                 <span class="form-submit-note">
-                  <strong>No spam, ever.</strong> We only contact you about your project.
+                  We use this only to reply about your project.
                 </span>
               </div>
             </form>
 
-            <div class="form-success" id="formSuccess">
-              <h4> Message Received!</h4>
-              <p>Thanks for reaching out. We'll follow up within one business day — usually much sooner. If it's urgent, call us at <strong>(512) 657-2152</strong>.</p>
+            <div class="form-success" id="formSuccess" hidden>
+              <h4 tabindex="-1">Message received</h4>
+              <p>We will follow up by text or email to set a time. Estimates are free. For a faster reply, call or text <a href="tel:+15126572152">(512) 657-2152</a>.</p>
+            </div>
+            <div class="form-fallback" id="formFallback" hidden role="alert">
+              <p id="formFallbackText"></p>
             </div>
           </div>
         </div>
@@ -352,62 +377,62 @@
 
       <div class="faq-list">
         <div class="faq-item">
-          <div class="faq-q">
-            How much does a typical irrigation installation cost?
-            <span class="faq-arrow">▼</span>
-          </div>
+          <button type="button" class="faq-q" aria-expanded="false">
+            Which services do you offer?
+            <span class="faq-arrow" aria-hidden="true">▼</span>
+          </button>
           <div class="faq-a">
-            Irrigation system costs vary based on lot size, number of zones, water pressure, and controller type. For a typical residential install in the Buda/Kyle area, most systems run between $2,500 and $6,500. We'll walk through everything with you during the estimate before any commitment is made.
+            Irrigation, LED landscape lighting, hardscape, concrete and flatwork, drainage, and trenching and underground utilities. A job can be one of those, or a mix.
           </div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-q">
+          <button type="button" class="faq-q" aria-expanded="false">
             Do you offer free estimates?
-            <span class="faq-arrow">▼</span>
-          </div>
+            <span class="faq-arrow" aria-hidden="true">▼</span>
+          </button>
           <div class="faq-a">
-            Yes — all estimates are free. We visit your property, assess what needs to be done, and put together a written quote with no pressure or obligation to proceed.
+            Yes. Estimates are free. We visit the property, then send a written price. You do not owe anything for the visit. We do not publish prices, because the number depends on the site.
           </div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-q">
-            How long does an irrigation install take?
-            <span class="faq-arrow">▼</span>
-          </div>
+          <button type="button" class="faq-q" aria-expanded="false">
+            How long does a job take?
+            <span class="faq-arrow" aria-hidden="true">▼</span>
+          </button>
           <div class="faq-a">
-            Most residential irrigation systems are completed in 1 to 2 days. Larger properties or commercial sites may take longer. We'll give you a realistic timeline as part of your estimate.
+            Most jobs are completed in less than a week. Larger commercial work takes longer. The estimate includes a timeline.
           </div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-q">
-            Do you work on existing irrigation systems, or only new installs?
-            <span class="faq-arrow">▼</span>
-          </div>
+          <button type="button" class="faq-q" aria-expanded="false">
+            Do you repair irrigation, or only install new systems?
+            <span class="faq-arrow" aria-hidden="true">▼</span>
+          </button>
           <div class="faq-a">
-            Both. We repair and upgrade existing irrigation systems regularly — broken heads, zone failures, controller replacements, and line repairs. Most repair visits can be scheduled within a week.
+            Both. We repair broken heads, zone failures, controllers, and lines, and we install new systems.
           </div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-q">
+          <button type="button" class="faq-q" aria-expanded="false">
             Do you do commercial work?
-            <span class="faq-arrow">▼</span>
-          </div>
+            <span class="faq-arrow" aria-hidden="true">▼</span>
+          </button>
           <div class="faq-a">
-            Yes. We've completed irrigation, lighting, drainage, and trenching projects for commercial properties throughout Central Texas. Contact us to discuss your project scope and timeline.
+            Yes. Commercial clients and homeowners are both in scope. Named work includes the Bowie High School excavation, irrigation at Martin Middle School fields, and two softball-field irrigation systems at Dripping Springs Sports Complex.
           </div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-q">
+          <button type="button" class="faq-q" aria-expanded="false">
             Are you licensed and insured?
-            <span class="faq-arrow">▼</span>
-          </div>
+            <span class="faq-arrow" aria-hidden="true">▼</span>
+          </button>
           <div class="faq-a">
-            Yes. AquaLED, LLC is fully licensed in the state of Texas and carries general liability insurance. We're happy to provide proof of insurance before any job begins.
+            Licensed Irrigator LI #22379. General liability coverage is $2,000,000. Proof is available before a job starts.
           </div>
         </div>
       </div>
@@ -430,44 +455,77 @@
   <div id="footer-placeholder"></div>
 
   <script>
-    // ── FAQ Accordion ──
-    document.querySelectorAll('.faq-q').forEach(q => {
+    document.querySelectorAll('.faq-q').forEach(function (q) {
       q.addEventListener('click', function () {
-        const item = this.closest('.faq-item');
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
+        var item = this.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function (i) {
+          i.classList.remove('open');
+          i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        }
       });
     });
 
-    // ── Form submission demo ──
+    // Reads the form action. YOUR_FORM_ID in that URL means the endpoint is unset.
     document.getElementById('contactForm').addEventListener('submit', function (e) {
       e.preventDefault();
-      const form = this;
-      const success = document.getElementById('formSuccess');
-      const btn = form.querySelector('button[type="submit"]');
+      var form = this;
+      var success = document.getElementById('formSuccess');
+      var fallback = document.getElementById('formFallback');
+      var fallbackText = document.getElementById('formFallbackText');
+      var btn = form.querySelector('button[type="submit"]');
+      var action = form.getAttribute('action') || '';
+      var phone = '<a href="tel:+15126572152">(512) 657-2152</a>';
+      var email = '<a href="mailto:info@aqualedllc.com">info@aqualedllc.com</a>';
 
-      // Simple validation
-      const required = form.querySelectorAll('[required]');
-      let valid = true;
-      required.forEach(field => {
-        if (!field.value.trim()) {
-          field.style.borderColor = '#e74c3c';
-          valid = false;
-        } else {
-          field.style.borderColor = '';
-        }
-      });
+      function showFallback(lead) {
+        fallbackText.innerHTML = lead + ' Call or text ' + phone + ', or email ' + email + '.';
+        fallback.hidden = false;
+        success.hidden = true;
+        btn.disabled = false;
+        btn.textContent = 'Send Estimate Request →';
+        fallback.tabIndex = -1;
+        fallback.focus();
+      }
 
-      if (!valid) return;
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
 
-      btn.textContent = 'Sending…';
+      if ((form.querySelector('[name="_gotcha"]') || {}).value) {
+        form.hidden = true;
+        success.hidden = false;
+        fallback.hidden = true;
+        success.querySelector('h4').focus();
+        return;
+      }
+
+      if (action.indexOf('YOUR_FORM_ID') !== -1 || action.trim() === '') {
+        showFallback('This form is not connected to an inbox yet, so the message was not sent.');
+        return;
+      }
+
       btn.disabled = true;
+      btn.textContent = 'Sending…';
+      fallback.hidden = true;
 
-      setTimeout(function () {
-        form.style.display = 'none';
-        success.style.display = 'block';
-      }, 1000);
+      fetch(action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      }).then(function (response) {
+        if (!response.ok) throw new Error('form post failed');
+        form.hidden = true;
+        success.hidden = false;
+        success.querySelector('h4').focus();
+      }).catch(function () {
+        showFallback('The message did not send.');
+      });
     });
   </script>
 

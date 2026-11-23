@@ -3,8 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services — Irrigation, Lighting, Drainage | AquaLED, LLC Central Texas</title>
-  <meta name="description" content="AquaLED, LLC offers irrigation installation and repair, LED landscape lighting, drainage solutions, and underground utility trenching across Buda, Kyle, Austin, and San Marcos, TX." />
+  <title>Services — AquaLED, LLC | Irrigation, Lighting, Hardscape, Concrete, Drainage &amp; Trenching</title>
+  <meta name="description" content="AquaLED services: irrigation, LED landscape lighting, hardscape, concrete and flatwork, drainage, and trenching across Central Texas. Free estimates." />
+  <link rel="canonical" href="https://www.aqualedtx.com/services.html" />
+  <link rel="icon" href="favicon.ico" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AquaLED, LLC" />
+  <meta property="og:title" content="Services — AquaLED, LLC" />
+  <meta property="og:description" content="Irrigation, LED landscape lighting, hardscape, concrete and flatwork, drainage, and trenching across Central Texas." />
+  <meta property="og:url" content="https://www.aqualedtx.com/services.html" />
+  <meta property="og:image" content="https://www.aqualedtx.com/assets/photos/web/valve-manifold.jpg" />
+  <meta property="og:image:alt" content="PVC irrigation manifold and valve wires in an open trench" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Services — AquaLED, LLC" />
+  <meta name="twitter:description" content="Irrigation, LED landscape lighting, hardscape, concrete and flatwork, drainage, and trenching across Central Texas." />
+  <meta name="twitter:image" content="https://www.aqualedtx.com/assets/photos/web/valve-manifold.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
@@ -37,31 +51,42 @@
       overflow: hidden;
       box-shadow: var(--shadow);
       aspect-ratio: 4/3;
+      background: var(--black);
+      position: relative;
+    }
+
+    .service-visual picture,
+    .service-visual img {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .service-visual.v-plain {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.85rem;
+      padding: 2rem;
+      text-align: center;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      box-shadow: none;
+      color: var(--muted);
       font-family: 'DM Sans', sans-serif;
-      color: rgba(255,255,255,0.6);
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
     }
 
-    .service-visual.v-irrigation {
-      background: linear-gradient(135deg, #1a3f63 0%, #2E8B57 100%);
+    .service-visual.v-plain strong {
+      color: var(--white);
+      font-size: 1.05rem;
+      letter-spacing: 0;
     }
-    .service-visual.v-lighting {
-      background: linear-gradient(135deg, #0d2137 0%, #b8860b 100%);
-    }
-    .service-visual.v-drainage {
-      background: linear-gradient(135deg, #1a3f63 0%, #4a8fa5 100%);
-    }
-    .service-visual.v-trenching {
-      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    }
-    .visual-icon { font-size: 3.5rem; }
 
     .service-text h2 {
       margin-bottom: 1rem;
@@ -129,25 +154,27 @@
   <section class="service-detail" id="irrigation">
     <div class="container">
       <div class="service-detail-inner">
-        <div class="service-visual v-irrigation">
-          <div class="visual-icon"></div>
-          <span>Irrigation Install · Buda, TX</span>
+        <div class="service-visual">
+          <picture>
+            <source srcset="assets/photos/web/valve-manifold.webp" type="image/webp" />
+            <img src="assets/photos/web/valve-manifold.jpg" width="787" height="1400" alt="PVC irrigation manifold and valve wires in an open trench" style="object-position:center 30%;" decoding="async" />
+          </picture>
         </div>
         <div class="service-text">
           <span class="section-label">Service 01</span>
-          <h2>Irrigation Installation &amp; Repair</h2>
+          <h2>Irrigation</h2>
           <p>
             A well-designed irrigation system does more than water your yard — it protects your landscaping investment, lowers your water bill, and removes the guesswork entirely. We design every system from scratch based on your yard's zones, soil, sun exposure, and plant types.
           </p>
           <p>
-            Already have a system that's underperforming? We diagnose and repair existing irrigation — broken heads, damaged lines, controller issues, and inefficient zone layouts. Most repairs are completed same-day.
+            Already have a system that's underperforming? We diagnose and repair existing irrigation: broken heads, damaged lines, controller issues, and zone layouts that are not doing the job.
           </p>
           <div class="service-benefits">
             <div class="benefit-item">Custom zone layout for maximum efficiency</div>
             <div class="benefit-item">Smart Wi-Fi controller installation available</div>
             <div class="benefit-item">Rain sensor and seasonal programming included</div>
             <div class="benefit-item">New construction and retrofit installs</div>
-            <div class="benefit-item">Same-day repair for most issues</div>
+            <div class="benefit-item">Repairs on existing systems, not only new installs</div>
             <div class="benefit-item">Winterization and spring startup service</div>
           </div>
           <a href="contact.html" class="btn btn-primary">Get an Irrigation Estimate →</a>
@@ -162,13 +189,15 @@
   <section class="service-detail" id="lighting">
     <div class="container">
       <div class="service-detail-inner">
-        <div class="service-visual v-lighting">
-          <div class="visual-icon"></div>
-          <span>Landscape Lighting · Austin, TX</span>
+        <div class="service-visual">
+          <picture>
+            <source srcset="assets/photos/web/lighting-blue.webp" type="image/webp" />
+            <img src="assets/photos/web/lighting-blue.jpg" width="1920" height="1440" alt="Residence at night with blue LED uplights on the trees and walls" decoding="async" />
+          </picture>
         </div>
         <div class="service-text">
           <span class="section-label">Service 02</span>
-          <h2>LED Landscape Lighting</h2>
+          <h2>Landscape Lighting (LED)</h2>
           <p>
             Landscape lighting done well transforms a property after dark — it adds security, curb appeal, and ambiance that you'll notice every time you pull into your driveway. We design and install fully low-voltage LED systems built to last in the Texas heat.
           </p>
@@ -190,18 +219,85 @@
   </section>
 
   <!-- ══════════════════════════════════════════════
+       HARDSCAPE
+  ══════════════════════════════════════════════ -->
+  <section class="service-detail" id="hardscape">
+    <div class="container">
+      <div class="service-detail-inner">
+        <div class="service-visual">
+          <picture>
+            <source srcset="assets/photos/web/cedar-fence.webp" type="image/webp" />
+            <img src="assets/photos/web/cedar-fence.jpg" width="1400" height="1051" alt="New horizontal cedar fence on black posts" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <div class="service-text">
+          <span class="section-label">Service 03</span>
+          <h2>Hardscape</h2>
+          <p>
+            Hardscape is the part of the yard you walk on and build around: patios, walkways, fences, and the edges that hold a planting bed. We build it so it sits with the irrigation and the lighting, not as a separate job that fights the rest of the yard.
+          </p>
+          <p>
+            The photo here is a new cedar fence on black posts. Poured concrete lives in the next section.
+          </p>
+          <div class="service-benefits">
+            <div class="benefit-item">Patios, walkways, and fences</div>
+            <div class="benefit-item">Edges and beds that meet the lawn cleanly</div>
+            <div class="benefit-item">Work sequenced with irrigation and lighting</div>
+            <div class="benefit-item">Residential and commercial sites</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary">Get a Hardscape Estimate →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       CONCRETE
+  ══════════════════════════════════════════════ -->
+  <section class="service-detail" id="concrete">
+    <div class="container">
+      <div class="service-detail-inner">
+        <div class="service-visual">
+          <picture>
+            <source srcset="assets/photos/web/concrete-pads.webp" type="image/webp" />
+            <img src="assets/photos/web/concrete-pads.jpg" width="640" height="480" alt="Square concrete pads poured in forms around a tree" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <div class="service-text">
+          <span class="section-label">Service 04</span>
+          <h2>Concrete &amp; Flatwork</h2>
+          <p>
+            Flatwork runs from a small residential pad to a larger commercial pour. Driveways, sidewalks, slabs, pads, and foundations. Forms, pour, and finish, with the water going where it should.
+          </p>
+          <p>
+            The photo here is poured square pads, still in their forms, set around a tree.
+          </p>
+          <div class="service-benefits">
+            <div class="benefit-item">Driveways, sidewalks, and slabs</div>
+            <div class="benefit-item">Pads and flatwork around existing trees</div>
+            <div class="benefit-item">Foundations, from small pads to larger pours</div>
+            <div class="benefit-item">Residential and commercial sites</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary">Get a Concrete Estimate →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
        DRAINAGE
   ══════════════════════════════════════════════ -->
   <section class="service-detail" id="drainage">
     <div class="container">
       <div class="service-detail-inner">
-        <div class="service-visual v-drainage">
-          <div class="visual-icon"></div>
-          <span>Drainage Solution · Kyle, TX</span>
+        <div class="service-visual v-plain">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v6"/><path d="M8 8c0 4 8 4 8 8s-8 4-8 8"/><path d="M4 20h16"/></svg>
+          <strong>No drainage photo yet</strong>
+          <span>French drains, channel drains, and grading are part of the work. A photo of a drainage job is not in this set.</span>
         </div>
         <div class="service-text">
-          <span class="section-label">Service 03</span>
-          <h2>Drainage Solutions</h2>
+          <span class="section-label">Service 05</span>
+          <h2>Drainage</h2>
           <p>
             Standing water is one of the most damaging things for a home or commercial property. Poor drainage leads to foundation damage, erosion, dead grass, and flooded areas that make your yard unusable. We solve drainage problems for good — not just temporarily.
           </p>
@@ -228,12 +324,14 @@
   <section class="service-detail" id="trenching">
     <div class="container">
       <div class="service-detail-inner">
-        <div class="service-visual v-trenching">
-          <div class="visual-icon"></div>
-          <span>Trenching &amp; Underground Utility</span>
+        <div class="service-visual">
+          <picture>
+            <source srcset="assets/photos/web/trench-wide.webp" type="image/webp" />
+            <img src="assets/photos/web/trench-wide.jpg" width="799" height="799" alt="Long shored trench with spoil piled beside it" loading="lazy" decoding="async" />
+          </picture>
         </div>
         <div class="service-text">
-          <span class="section-label">Service 04</span>
+          <span class="section-label">Service 06</span>
           <h2>Trenching &amp; Underground Utilities</h2>
           <p>
             Whether you need conduit run for an outdoor structure, irrigation mainline trenched across a large property, or underground wiring routed for landscape lighting — we do it with precision and minimal disruption to your landscaping.
