@@ -37,6 +37,8 @@
       position: relative;
       overflow: hidden;
       background: #0a0f0c;
+      margin: 0;
+      padding: 0;
     }
 
     .home-hero .hero-photo {
@@ -45,22 +47,33 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 40%;
       z-index: 0;
     }
 
+    /* Gradient only on the text side so the blue-lit house stays visible. */
     .home-hero::before {
       content: '';
       position: absolute;
       inset: 0;
       z-index: 1;
-      background: linear-gradient(to bottom, rgba(10,15,12,0.6) 0%, rgba(10,15,12,0.4) 50%, rgba(10,15,12,0.85) 100%);
+      background:
+        linear-gradient(to right,
+          rgba(10,15,12,0.82) 0%,
+          rgba(10,15,12,0.55) 32%,
+          rgba(10,15,12,0.18) 58%,
+          rgba(10,15,12,0.04) 78%,
+          transparent 100%),
+        linear-gradient(to top,
+          rgba(10,15,12,0.45) 0%,
+          transparent 38%);
     }
 
     .home-hero .container,
     .home-hero .hero-scroll { position: relative; z-index: 2; }
 
     .hero-content {
-      max-width: 760px;
+      max-width: 640px;
     }
 
     .hero-badge {
@@ -99,6 +112,7 @@
       font-size: clamp(2.2rem, 5.5vw, 3.6rem);
       line-height: 1.1;
       margin-bottom: 1.25rem;
+      text-shadow: 0 2px 28px rgba(10,15,12,0.7);
     }
 
     .home-hero h1 em {
@@ -107,11 +121,12 @@
     }
 
     .hero-sub {
-      color: rgba(255,255,255,0.8);
+      color: rgba(255,255,255,0.88);
       font-size: clamp(1rem, 2vw, 1.2rem);
       max-width: 580px;
       margin-bottom: 2rem;
       line-height: 1.65;
+      text-shadow: 0 1px 16px rgba(10,15,12,0.75);
     }
 
     .hero-ctas {
@@ -197,6 +212,154 @@
     @media (max-width: 768px) {
       .why-intro { grid-template-columns: 1fr; gap: 2rem; }
     }
+
+    /* ── PROJECTS (photo-forward) ───────────────────── */
+    .projects-section { background: var(--black); }
+
+    .projects-feature {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .projects-feature .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .projects-feature .project-card.feature .project-img {
+      height: auto;
+      flex: 1;
+      min-height: 380px;
+    }
+
+    .projects-feature .project-card.feature .project-body h3 {
+      font-size: 1.25rem;
+    }
+
+    .projects-feature .project-side {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .projects-feature .project-side .project-card {
+      flex-direction: row;
+      min-height: 0;
+    }
+
+    .projects-feature .project-side .project-img {
+      width: 46%;
+      min-width: 140px;
+      height: auto;
+      min-height: 132px;
+      flex: 0 0 46%;
+    }
+
+    .projects-feature .project-side .project-body {
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* ── COMPACT SERVICES ───────────────────────────── */
+    .services-section { background: var(--charcoal); padding-top: 72px; padding-bottom: 72px; }
+
+    .services-compact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    a.service-tile {
+      display: grid;
+      grid-template-columns: 40px 1fr auto;
+      gap: 0.85rem;
+      align-items: center;
+      padding: 1.05rem 1rem;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: background var(--transition);
+    }
+    a.service-tile:nth-child(odd) { border-right: 1px solid var(--border); }
+    a.service-tile:hover { background: var(--surface); }
+
+    .service-tile-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius);
+      background: var(--green-dim);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .service-tile-text strong {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.15rem;
+    }
+    .service-tile-text span {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .service-tile-arrow {
+      color: var(--green);
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding-left: 0.25rem;
+    }
+
+    .why-grid-three {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 900px) {
+      .projects-feature { grid-template-columns: 1fr; }
+      .projects-feature .project-card.feature .project-img { min-height: 260px; }
+    }
+
+    @media (max-width: 768px) {
+      .home-hero::before {
+        background:
+          linear-gradient(to bottom,
+            rgba(10,15,12,0.58) 0%,
+            rgba(10,15,12,0.28) 42%,
+            rgba(10,15,12,0.55) 100%),
+          linear-gradient(to right,
+            rgba(10,15,12,0.4) 0%,
+            rgba(10,15,12,0.1) 100%);
+      }
+      .why-grid-three { grid-template-columns: 1fr; }
+      .services-compact { grid-template-columns: 1fr; }
+      a.service-tile:nth-child(odd) { border-right: 0; }
+    }
+
+    @media (max-width: 520px) {
+      .projects-feature .project-side .project-card { flex-direction: column; }
+      .projects-feature .project-side .project-img {
+        width: 100%;
+        flex: none;
+        height: 160px;
+        min-height: 160px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -272,90 +435,9 @@
   </div>
 
   <!-- ══════════════════════════════════════════════
-       SERVICES PREVIEW
+       REAL PROJECTS / RESULTS  (moved up, photo-forward)
   ══════════════════════════════════════════════ -->
-  <section>
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">What We Do</span>
-        <h2>Full-Service Outdoor Contractor</h2>
-        <p>Irrigation, LED landscape lighting, hardscape, concrete and flatwork, drainage, and trenching. One crew, from the trench to the finish.</p>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-card-body">
-            <div class="service-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
-            </div>
-            <h3>Irrigation</h3>
-            <p>New systems and repairs. Zone layout, controllers, heads, and lines for homes and commercial sites.</p>
-            <a href="services.html#irrigation" class="card-link">Learn More →</a>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card-body">
-            <div class="service-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-            </div>
-            <h3>Landscape Lighting (LED)</h3>
-            <p>Low-voltage LED uplights, path lights, and dim-and-color installs. Wire buried, fixtures set.</p>
-            <a href="services.html#lighting" class="card-link">Learn More →</a>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card-body">
-            <div class="service-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-            </div>
-            <h3>Hardscape</h3>
-            <p>Patios, walkways, fences, and the edges that hold a planting bed. Built to sit with the irrigation and lighting.</p>
-            <a href="services.html#hardscape" class="card-link">Learn More →</a>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card-body">
-            <div class="service-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-            </div>
-            <h3>Concrete &amp; Flatwork</h3>
-            <p>Driveways, sidewalks, slabs, pads, and foundations. Flatwork from a small residential pad to a larger pour.</p>
-            <a href="services.html#concrete" class="card-link">Learn More →</a>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card-body">
-            <div class="service-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M8 8c0 4 8 4 8 8s-8 4-8 8"/><path d="M4 20h16"/></svg>
-            </div>
-            <h3>Drainage</h3>
-            <p>French drains, channel drains, downspouts, and grading so water leaves the foundation instead of sitting on it.</p>
-            <a href="services.html#drainage" class="card-link">Learn More →</a>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card-body">
-            <div class="service-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18h20"/><path d="M4 18l3-8h10l3 8"/><path d="M8 18V10"/><path d="M16 18V10"/></svg>
-            </div>
-            <h3>Trenching &amp; Underground Utilities</h3>
-            <p>Irrigation mains, conduit, and lighting wire. The trench sized to the job, and the ground put back.</p>
-            <a href="services.html#trenching" class="card-link">Learn More →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════
-       REAL PROJECTS / RESULTS
-  ══════════════════════════════════════════════ -->
-  <section class="bg-offwhite">
+  <section class="projects-section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Real Work. Real Results.</span>
@@ -363,21 +445,10 @@
         <p>Photos from jobs in this set. Martin Middle School fields and the Dripping Springs Sports Complex softball systems are named work, and neither has a photo here.</p>
       </div>
 
-      <div class="projects-grid">
-        <div class="project-card">
+      <div class="projects-feature">
+        <div class="project-card feature">
           <div class="project-img">
-            <img src="assets/photos/web/bowie-trench.jpg" width="564" height="564" alt="Shoring and gravel bedding in the Bowie High School utility trench" loading="lazy" decoding="async">
-          </div>
-          <div class="project-body">
-            <span class="project-tag">Trenching</span>
-            <h3>Bowie High School</h3>
-            <p>About 1,500 linear feet excavated for new chiller and return lines. Shoring and gravel bedding in the trench.</p>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img">
-            <img src="assets/photos/web/lighting-blue.jpg" width="1920" height="1440" alt="Residence at night with blue LED uplights on the trees and walls" loading="lazy" decoding="async">
+            <img src="assets/photos/web/lighting-blue.jpg" width="1920" height="1440" alt="Residence at night with blue LED uplights on the trees and walls" decoding="async">
           </div>
           <div class="project-body">
             <span class="project-tag">Landscape Lighting</span>
@@ -386,31 +457,125 @@
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-img">
-            <img src="assets/photos/web/concrete-pads.jpg" width="640" height="480" alt="Square concrete pads poured in forms around a tree" loading="lazy" decoding="async">
+        <div class="project-side">
+          <div class="project-card">
+            <div class="project-img">
+              <img src="assets/photos/web/bowie-trench.jpg" width="564" height="564" alt="Shoring and gravel bedding in the Bowie High School utility trench" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Trenching</span>
+              <h3>Bowie High School</h3>
+              <p>About 1,500 linear feet excavated for new chiller and return lines. Shoring and gravel bedding in the trench.</p>
+            </div>
           </div>
-          <div class="project-body">
-            <span class="project-tag">Concrete</span>
-            <h3>Poured pads around a tree</h3>
-            <p>Square concrete pads still in their forms, set around a tree.</p>
-          </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-img">
-            <img src="assets/photos/web/irrigation-pump.jpg" width="1050" height="1400" alt="Irrigation pump on a concrete pad piped to a valve box beside a storage tank" loading="lazy" decoding="async">
+          <div class="project-card">
+            <div class="project-img">
+              <img src="assets/photos/web/concrete-pads.jpg" width="640" height="480" alt="Square concrete pads poured in forms around a tree" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Concrete</span>
+              <h3>Poured pads around a tree</h3>
+              <p>Square concrete pads still in their forms, set around a tree.</p>
+            </div>
           </div>
-          <div class="project-body">
-            <span class="project-tag">Irrigation</span>
-            <h3>Irrigation pump and valve box</h3>
-            <p>A pump on a pad, piped to a valve box beside a storage tank.</p>
+
+          <div class="project-card">
+            <div class="project-img">
+              <img src="assets/photos/web/irrigation-pump.jpg" width="1050" height="1400" alt="Irrigation pump on a concrete pad piped to a valve box beside a storage tank" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Irrigation</span>
+              <h3>Irrigation pump and valve box</h3>
+              <p>A pump on a pad, piped to a valve box beside a storage tank.</p>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="text-center mt-2">
         <a href="gallery.html" class="btn btn-dark">View All Projects →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SERVICES PREVIEW  (compact tiles)
+  ══════════════════════════════════════════════ -->
+  <section class="services-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What We Do</span>
+        <h2>Full-Service Outdoor Contractor</h2>
+        <p>Irrigation, LED landscape lighting, hardscape, concrete and flatwork, drainage, and trenching. One crew, from the trench to the finish.</p>
+      </div>
+
+      <div class="services-compact">
+        <a class="service-tile" href="services.html#irrigation">
+          <span class="service-tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+          </span>
+          <span class="service-tile-text">
+            <strong>Irrigation</strong>
+            <span>New systems and repairs. Zone layout, controllers, heads, and lines for homes and commercial sites.</span>
+          </span>
+          <span class="service-tile-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="service-tile" href="services.html#lighting">
+          <span class="service-tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </span>
+          <span class="service-tile-text">
+            <strong>Landscape Lighting (LED)</strong>
+            <span>Low-voltage LED uplights, path lights, and dim-and-color installs. Wire buried, fixtures set.</span>
+          </span>
+          <span class="service-tile-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="service-tile" href="services.html#hardscape">
+          <span class="service-tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </span>
+          <span class="service-tile-text">
+            <strong>Hardscape</strong>
+            <span>Patios, walkways, fences, and the edges that hold a planting bed. Built to sit with the irrigation and lighting.</span>
+          </span>
+          <span class="service-tile-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="service-tile" href="services.html#concrete">
+          <span class="service-tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </span>
+          <span class="service-tile-text">
+            <strong>Concrete &amp; Flatwork</strong>
+            <span>Driveways, sidewalks, slabs, pads, and foundations. Flatwork from a small residential pad to a larger pour.</span>
+          </span>
+          <span class="service-tile-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="service-tile" href="services.html#drainage">
+          <span class="service-tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M8 8c0 4 8 4 8 8s-8 4-8 8"/><path d="M4 20h16"/></svg>
+          </span>
+          <span class="service-tile-text">
+            <strong>Drainage</strong>
+            <span>French drains, channel drains, downspouts, and grading so water leaves the foundation instead of sitting on it.</span>
+          </span>
+          <span class="service-tile-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="service-tile" href="services.html#trenching">
+          <span class="service-tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18h20"/><path d="M4 18l3-8h10l3 8"/><path d="M8 18V10"/><path d="M16 18V10"/></svg>
+          </span>
+          <span class="service-tile-text">
+            <strong>Trenching &amp; Underground Utilities</strong>
+            <span>Irrigation mains, conduit, and lighting wire. The trench sized to the job, and the ground put back.</span>
+          </span>
+          <span class="service-tile-arrow" aria-hidden="true">→</span>
+        </a>
       </div>
     </div>
   </section>
@@ -438,12 +603,7 @@
         </div>
       </div>
 
-      <div class="why-grid">
-        <div class="why-item">
-          <div class="why-number">100%</div>
-          <h3>Jobs Done Right</h3>
-          <p>We don't cut corners. Every install is built to last and to code.</p>
-        </div>
+      <div class="why-grid why-grid-three">
         <div class="why-item">
           <div class="why-number">5 Yrs</div>
           <h3>In Business</h3>
@@ -515,4 +675,5 @@
   <div id="footer-placeholder"></div>
 
 </body>
+
 </html>
